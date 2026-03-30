@@ -23,7 +23,7 @@ export default function CustomPackaging() {
     },
     {
       icon: <Star size={20} />,
-      title: t('Premium Quality Standards', 'معايير جودة عالية'),
+      title: t('High Quality', 'جودة عالية'),
       desc: t('Every repackaged product goes through quality checks to ensure it meets your standards before shipping.', 'كل منتج يمر بفحص الجودة قبل الشحن لضمان مطابقته لمعاييرك.'),
     },
   ];
@@ -50,7 +50,7 @@ export default function CustomPackaging() {
           </span>
           <h2 className="text-[1.75rem] md:text-[2.2rem] font-extrabold text-primary mt-2 leading-tight">
             {t('Custom Packaging', 'التغليف والتخصيص')}<br className="hidden sm:block" />
-            {t('& Brand Identity', 'حسب الطلب')}
+            {t('& Branding', 'حسب الطلب')}
           </h2>
           <p className="text-gray-500 text-[15px] mt-3 max-w-xl mx-auto leading-relaxed">
             {t(
