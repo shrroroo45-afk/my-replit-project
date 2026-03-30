@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MessageSquare, PackageSearch, Ship, MapPin, ArrowDown } from 'lucide-react';
+import { MessageSquare, PackageSearch, Ship, MapPin } from 'lucide-react';
 import { useT } from '../lib/i18n';
 
 export default function HowItWorks() {
@@ -40,14 +40,6 @@ export default function HowItWorks() {
               </div>
             </motion.div>
           ))}
-
-          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <a href={`https://wa.me/962797540300?text=${encodeURIComponent(t('Hello, I want to start shipping', 'مرحبا، أريد البدء بالشحن'))}`}
-              target="_blank" rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-4 bg-primary text-white rounded-2xl font-bold text-[15px] shadow-lg shadow-primary/20 active:scale-95 transition-all mt-4">
-              {t('Start Now for Free', 'ابدأ الآن مجاناً')} <ArrowDown size={16} className="rotate-[-90deg]" />
-            </a>
-          </motion.div>
         </div>
 
         <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">

@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import TrackingBar from './components/TrackingBar';
 import Services from './components/Services';
 import WhyUs from './components/WhyUs';
 import HowItWorks from './components/HowItWorks';
@@ -21,7 +20,6 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <TrackingBar />
         <Services />
         <WhyUs />
         <HowItWorks />
