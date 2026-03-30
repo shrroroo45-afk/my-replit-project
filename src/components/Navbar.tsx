@@ -26,7 +26,7 @@ export default function Navbar() {
     <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-lg shadow-[0_1px_8px_rgba(0,0,0,0.05)]' : 'bg-white border-b border-gray-100'}`}>
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-5 lg:px-8 h-[64px]">
         <a href="#" className="flex-shrink-0">
-          <img src="/uploads/logo-avatar.png" alt="Avatar Express" className="h-10 w-auto" />
+          <img src="/uploads/logo-avatar.png" alt="Avatar Express" className="h-12 w-36 object-cover object-center rounded-lg" />
         </a>
 
         <div className="hidden lg:flex items-center gap-1">

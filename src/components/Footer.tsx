@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <img src="/uploads/logo-avatar.png" alt="Avatar Express" className="h-10 mb-5 brightness-0 invert" />
+            <img src="/uploads/logo-avatar.png" alt="Avatar Express" className="h-14 w-40 object-cover object-center rounded-lg mb-5" />
             <p className="text-[13px] text-blue-200/60 leading-relaxed">
               {t('Your trusted logistics partner for fast, safe, and professional international shipping.', 'شريكك اللوجستي الموثوق للشحن الدولي السريع والآمن والاحترافي.')}
             </p>
