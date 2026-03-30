@@ -5,13 +5,13 @@ import { useT } from '../lib/i18n';
 export default function Hero() {
   const t = useT();
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-navy">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-navy min-h-[640px] lg:min-h-[680px] flex flex-col justify-center">
       <div className="absolute inset-0">
         <img src="/uploads/hero-bg.jpg" alt="" className="w-full h-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/80 to-navy/95 lg:bg-gradient-to-r lg:from-primary/95 lg:via-primary/80 lg:to-primary/50" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-5 lg:px-8 pt-8 pb-10 md:py-20 w-full">
+      <div className="relative max-w-7xl mx-auto px-5 lg:px-8 pt-8 pb-10 lg:py-16 w-full">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
