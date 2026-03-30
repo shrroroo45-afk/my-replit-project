@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
+import { useT } from '../lib/i18n';
 
 export default function WhatsAppButton() {
+  const t = useT();
+  const msg = encodeURIComponent(t('Hello Avatar Express!', 'مرحبا Avatar Express!'));
   return (
     <motion.a
-      href="https://wa.me/962797540300?text=Hello%20Avatar%20Express!"
+      href={`https://wa.me/962797540300?text=${msg}`}
       target="_blank" rel="noopener noreferrer"
-      className="hidden md:flex fixed bottom-7 right-7 z-50 w-14 h-14 bg-wa rounded-full items-center justify-center shadow-xl shadow-wa/20 hover:scale-110 transition-transform"
+      className="hidden md:flex fixed bottom-7 end-7 z-50 w-14 h-14 bg-wa rounded-full items-center justify-center shadow-xl shadow-wa/20 hover:scale-110 transition-transform"
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 1.2, type: 'spring', stiffness: 200 }}

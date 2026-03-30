@@ -10,7 +10,7 @@ interface LangState {
 }
 
 export const useLang = create<LangState>((set, get) => ({
-  lang: 'en',
+  lang: 'ar',
   setLang: (lang) => {
     set({ lang });
     document.documentElement.lang = lang;

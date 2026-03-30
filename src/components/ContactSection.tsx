@@ -12,7 +12,10 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    const msg = `Hello Avatar Express!%0AName: ${form.name}%0APhone: ${form.phone}%0AType: ${form.type}%0AMessage: ${form.message}`;
+    const msg = encodeURIComponent(t(
+      `Hello Avatar Express!\nName: ${form.name}\nPhone: ${form.phone}\nType: ${form.type}\nMessage: ${form.message}`,
+      `مرحبا Avatar Express!\nالاسم: ${form.name}\nالهاتف: ${form.phone}\nنوع الشحنة: ${form.type}\nالرسالة: ${form.message}`
+    ));
     setTimeout(() => {
       window.open(`https://wa.me/962797540300?text=${msg}`, '_blank');
       setSending(false);

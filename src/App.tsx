@@ -13,6 +13,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import MobileSticky from './components/MobileSticky';
 import WhatsAppButton from './components/WhatsAppButton';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
       <Footer />
       <MobileSticky />
       <WhatsAppButton />
+      <ScrollToTop />
     </>
   );
 }

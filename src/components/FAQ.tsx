@@ -28,8 +28,8 @@ export default function FAQ() {
           {faqs.map((faq, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
               <div className={`rounded-xl border overflow-hidden transition-all duration-200 ${openIdx === i ? 'border-accent/20 bg-accent-50 shadow-sm' : 'border-gray-100 bg-white'}`}>
-                <button onClick={() => setOpenIdx(openIdx === i ? null : i)} className="w-full flex items-center justify-between p-4 md:p-5 text-left">
-                  <span className="text-[14px] font-semibold text-primary pr-4">{faq.q}</span>
+                <button onClick={() => setOpenIdx(openIdx === i ? null : i)} className="w-full flex items-center justify-between p-4 md:p-5 text-start">
+                  <span className="text-[14px] font-semibold text-primary pe-4">{faq.q}</span>
                   <ChevronDown size={16} className={`flex-shrink-0 transition-transform duration-300 ${openIdx === i ? 'rotate-180 text-accent' : 'text-gray-300'}`} />
                 </button>
                 <AnimatePresence>
