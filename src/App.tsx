@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import CustomPackaging from './components/CustomPackaging';
 import WhyUs from './components/WhyUs';
 import HowItWorks from './components/HowItWorks';
 import Stats from './components/Stats';
@@ -21,6 +22,7 @@ export default function App() {
       <main>
         <Hero />
         <Services />
+        <CustomPackaging />
         <WhyUs />
         <HowItWorks />
         <Stats />
