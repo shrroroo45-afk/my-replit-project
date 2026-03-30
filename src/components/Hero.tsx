@@ -43,7 +43,7 @@ export default function Hero() {
               <Globe size={13} /> {t('International Shipping & Logistics', 'شحن دولي وخدمات لوجستية')}
             </div>
 
-            <h1 className="text-[2rem] sm:text-[2.4rem] md:text-[2.8rem] font-extrabold leading-[1.35] text-white tracking-tight mb-5">
+            <h1 className="text-[2rem] sm:text-[2.4rem] md:text-[2.8rem] font-extrabold leading-[1.6] text-white tracking-tight mb-5">
               {t('Fast & Reliable', 'شحن دولي سريع')}<br/>
               {t('International Shipping', 'وموثوق بأسعار تنافسية')}<br/>
               <span className="text-accent-light">{t('At Competitive Prices', 'من الصين إلى الأردن')}</span>
