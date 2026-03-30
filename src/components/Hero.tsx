@@ -59,8 +59,8 @@ export default function Hero() {
           <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
             className="hidden lg:block">
             <div className="relative">
-              <div className="w-full h-[220px] rounded-2xl shadow-2xl shadow-black/20 overflow-hidden bg-[#0a1628] flex items-center justify-center p-6">
-                <img src="/uploads/hero-ship.png" alt="Avatar Express" className="w-full h-auto object-contain" />
+              <div className="w-full rounded-2xl shadow-2xl shadow-black/20 overflow-hidden">
+                <img src="/uploads/hero-ship.jpg" alt="Avatar Express Shipping" className="w-full h-[380px] object-cover" />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-white rounded-xl shadow-xl border border-gray-100 px-5 py-4">
                 <p className="text-[26px] font-extrabold text-primary">5,000+</p>
