@@ -32,12 +32,12 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <a href="https://wa.me/962776000000?text=Hello%2C%20I%20need%20a%20shipping%20quote"
+              <a href="https://wa.me/962797540300?text=Hello%2C%20I%20need%20a%20shipping%20quote"
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 px-7 py-3.5 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/25">
                 {t('Get a Quote', 'احصل على عرض سعر')} <ArrowRight size={16} />
               </a>
-              <a href="tel:+962776000000"
+              <a href="tel:+962797540300"
                 className="flex items-center gap-2 px-7 py-3.5 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-xl font-bold text-[15px] hover:bg-white/20 transition-all">
                 <Phone size={16} /> {t('Call Now', 'اتصل الآن')}
               </a>

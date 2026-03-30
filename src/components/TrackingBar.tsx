@@ -8,7 +8,7 @@ export default function TrackingBar() {
 
   const handleTrack = () => {
     if (trackId.trim()) {
-      window.open(`https://wa.me/962776000000?text=Hello%2C%20I%20want%20to%20track%20shipment%3A%20${trackId}`, '_blank');
+      window.open(`https://wa.me/962797540300?text=Hello%2C%20I%20want%20to%20track%20shipment%3A%20${trackId}`, '_blank');
     }
   };
 

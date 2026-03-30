@@ -62,7 +62,7 @@ export default function Services() {
                 <div className="w-14 h-14 rounded-xl bg-primary-50 flex items-center justify-center text-accent mb-5">{s.icon}</div>
                 <h3 className="text-[1.25rem] md:text-[1.4rem] font-extrabold text-primary mb-3">{s.title}</h3>
                 <p className="text-[14.5px] text-gray-500 leading-relaxed mb-6">{s.desc}</p>
-                <a href={`https://wa.me/962776000000?text=Hi%2C%20I'm%20interested%20in%20${encodeURIComponent(s.title)}`}
+                <a href={`https://wa.me/962797540300?text=Hi%2C%20I'm%20interested%20in%20${encodeURIComponent(s.title)}`}
                   target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-[14px] font-bold text-accent hover:text-primary transition-colors w-fit">
                   {t('Learn More', 'اعرف المزيد')} <ArrowRight size={15} />

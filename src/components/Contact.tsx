@@ -12,7 +12,7 @@ export default function Contact() {
     setSending(true);
     const msg = `مرحبا Avatar Express!%0Aالاسم: ${form.name}%0Aالهاتف: ${form.phone}%0Aنوع الشحنة: ${form.type}%0Aالرسالة: ${form.message}`;
     setTimeout(() => {
-      window.open(`https://wa.me/962776000000?text=${msg}`, '_blank');
+      window.open(`https://wa.me/962797540300?text=${msg}`, '_blank');
       setSending(false);
       setSent(true);
       setTimeout(() => setSent(false), 4000);
@@ -33,8 +33,9 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           <motion.div initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-2 space-y-3">
             {[
-              { icon: <Phone size={17} />, label: 'اتصل بنا', value: '+962 77 600 0000', href: 'tel:+962776000000' },
-              { icon: <MessageCircle size={17} />, label: 'واتساب', value: 'راسلنا مباشرة', href: 'https://wa.me/962776000000', ext: true, green: true },
+              { icon: <Phone size={17} />, label: 'هاتف 1', value: '+962 79 754 0300', href: 'tel:+962797540300' },
+              { icon: <Phone size={17} />, label: 'هاتف 2', value: '+962 79 144 0828', href: 'tel:+962791440828' },
+              { icon: <MessageCircle size={17} />, label: 'واتساب', value: 'راسلنا مباشرة', href: 'https://wa.me/962797540300', ext: true, green: true },
               { icon: <Mail size={17} />, label: 'البريد الإلكتروني', value: 'info@avatarexpress.jo', href: 'mailto:info@avatarexpress.jo' },
             ].map(c => (
               <a key={c.label} href={c.href} target={c.ext ? '_blank' : undefined} rel={c.ext ? 'noopener noreferrer' : undefined}
