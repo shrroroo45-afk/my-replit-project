@@ -9,10 +9,18 @@ interface LangState {
   dir: () => 'ltr' | 'rtl';
 }
 
+const savedLang = (localStorage.getItem('avatar_lang') as Lang) || 'ar';
+
+if (savedLang) {
+  document.documentElement.lang = savedLang;
+  document.documentElement.dir = savedLang === 'ar' ? 'rtl' : 'ltr';
+}
+
 export const useLang = create<LangState>((set, get) => ({
-  lang: 'ar',
+  lang: savedLang,
   setLang: (lang) => {
     set({ lang });
+    localStorage.setItem('avatar_lang', lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   },
@@ -27,7 +35,6 @@ export function t(en: string, ar: string): string {
   return useLang.getState().lang === 'ar' ? ar : en;
 }
 
-// Hook version for reactive updates
 export function useT() {
   const lang = useLang(s => s.lang);
   return (en: string, ar: string) => lang === 'ar' ? ar : en;
