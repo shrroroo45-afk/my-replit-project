@@ -7,8 +7,7 @@ import { useT } from '../lib/i18n';
 function ChoiceModal({ onClose }: { onClose: () => void }) {
   const t = useT();
   return (
-    <AnimatePresence>
-      <motion.div
+    <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -98,7 +97,6 @@ function ChoiceModal({ onClose }: { onClose: () => void }) {
           </div>
         </motion.div>
       </motion.div>
-    </AnimatePresence>
   );
 }
 
@@ -147,7 +145,9 @@ export default function Services() {
 
   return (
     <section id="services" className="py-16 md:py-28 bg-white">
-      {showChoice && <ChoiceModal onClose={() => setShowChoice(false)} />}
+      <AnimatePresence>
+        {showChoice && <ChoiceModal onClose={() => setShowChoice(false)} />}
+      </AnimatePresence>
 
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 md:mb-16">
