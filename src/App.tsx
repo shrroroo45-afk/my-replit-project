@@ -17,6 +17,7 @@ import MobileSticky from './components/MobileSticky';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
 import OceanFreight from './pages/OceanFreight';
+import AirFreight from './pages/AirFreight';
 
 function HashScroller() {
   const { hash, pathname } = useLocation();
@@ -67,6 +68,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/ocean-freight" element={<OceanFreight />} />
+        <Route path="/air-freight" element={<AirFreight />} />
       </Routes>
     </BrowserRouter>
   );
