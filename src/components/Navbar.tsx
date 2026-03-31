@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Phone, Menu, X, MessageCircle, Globe } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import { useLang, useT } from '../lib/i18n';
 
 export default function Navbar() {
@@ -7,6 +8,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const { lang, toggle: toggleLang } = useLang();
   const t = useT();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  const prefix = isHome ? '' : '/';
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 10);
@@ -15,17 +19,17 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { href: '#services', label: t('Services', 'الخدمات') },
-    { href: '#why-us', label: t('Why Us', 'لماذا نحن') },
-    { href: '#how-it-works', label: t('How It Works', 'كيف نعمل') },
-    { href: '#reviews', label: t('Reviews', 'التقييمات') },
-    { href: '#contact', label: t('Contact', 'تواصل معنا') },
+    { href: `${prefix}#services`, label: t('Services', 'الخدمات') },
+    { href: `${prefix}#why-us`, label: t('Why Us', 'لماذا نحن') },
+    { href: `${prefix}#how-it-works`, label: t('How It Works', 'كيف نعمل') },
+    { href: `${prefix}#reviews`, label: t('Reviews', 'التقييمات') },
+    { href: `${prefix}#contact`, label: t('Contact', 'تواصل معنا') },
   ];
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-lg shadow-[0_1px_8px_rgba(0,0,0,0.05)]' : 'bg-white border-b border-gray-100'}`}>
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-5 lg:px-8 h-[64px]">
-        <a href="#" className="flex-shrink-0">
+        <a href={prefix || '/'} className="flex-shrink-0">
           <img src="/uploads/logo-avatar.png" alt="Avatar Express" className="h-12 w-36 object-cover object-center rounded-lg" />
         </a>
 
