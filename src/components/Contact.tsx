@@ -33,8 +33,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           <motion.div initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-2 space-y-3">
             {[
-              { icon: <Phone size={17} />, label: 'هاتف 1', value: '+962 79 754 0300', href: 'tel:+962791440828' },
-              { icon: <Phone size={17} />, label: 'هاتف 2', value: '+962 79 144 0828', href: 'tel:+962791440828' },
+              { icon: <Phone size={17} />, label: 'هاتف', value: '+962 79 144 0828', href: 'tel:+962791440828' },
               { icon: <MessageCircle size={17} />, label: 'واتساب', value: 'راسلنا مباشرة', href: 'https://wa.me/962791440828', ext: true, green: true },
               { icon: <Mail size={17} />, label: 'البريد الإلكتروني', value: 'info@avatarexpress.jo', href: 'mailto:info@avatarexpress.jo' },
             ].map(c => (

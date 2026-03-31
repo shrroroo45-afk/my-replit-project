@@ -70,9 +70,9 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-4 mt-8">
               {[
-                { icon: <Shield size={14} />, en: 'Fully Insured', ar: 'تأمين كامل' },
-                { icon: <Clock size={14} />, en: '24/7 Support', ar: 'دعم 24/7' },
-                { icon: <Globe size={14} />, en: 'China → Jordan', ar: 'الصين → الأردن' },
+                { icon: <Clock size={14} />, en: '7–12 Day Air Delivery', ar: 'توصيل جوي 7-12 يوم' },
+                { icon: <Shield size={14} />, en: '100% Customs Handled', ar: 'تخليص جمركي 100%' },
+                { icon: <Globe size={14} />, en: '24/7 Support', ar: 'دعم 24/7' },
               ].map(b => (
                 <div key={b.en} className="flex items-center gap-1.5 text-[12.5px] text-blue-200/70 font-medium">
                   {b.icon} {t(b.en, b.ar)}

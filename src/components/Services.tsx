@@ -186,7 +186,7 @@ export default function Services() {
                     <Plane size={14} /> {t('Learn More', 'اعرف المزيد')}
                   </button>
                 ) : (
-                  <a href={`https://wa.me/962797540300?text=${encodeURIComponent(t(`Hello, I'm interested in ${s.title}`, `مرحبا، أريد الاستفسار عن ${s.title}`))}`}
+                  <a href={`https://wa.me/962791440828?text=${encodeURIComponent(t(`Hello, I'm interested in ${s.title}`, `مرحبا، أريد الاستفسار عن ${s.title}`))}`}
                     target="_blank" rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary text-white rounded-xl font-bold text-[13px] w-full justify-center">
                     <MessageCircle size={14} /> {t('Ask via WhatsApp', 'استفسر عبر الواتساب')}
@@ -220,7 +220,7 @@ export default function Services() {
                     {t('Learn More', 'اعرف المزيد')} <ArrowRight size={15} />
                   </button>
                 ) : (
-                  <a href={`https://wa.me/962797540300?text=${encodeURIComponent(t(`Hello, I'm interested in ${s.title}`, `مرحبا، أريد الاستفسار عن ${s.title}`))}`}
+                  <a href={`https://wa.me/962791440828?text=${encodeURIComponent(t(`Hello, I'm interested in ${s.title}`, `مرحبا، أريد الاستفسار عن ${s.title}`))}`}
                     target="_blank" rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-[14px] font-bold text-accent hover:text-primary transition-colors w-fit">
                     {t('Learn More', 'اعرف المزيد')} <ArrowRight size={15} />

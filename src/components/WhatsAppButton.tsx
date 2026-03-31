@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
   const msg = encodeURIComponent(t('Hello Avatar Express!', 'مرحبا Avatar Express!'));
   return (
     <motion.a
-      href={`https://wa.me/962797540300?text=${msg}`}
+      href={`https://wa.me/962791440828?text=${msg}`}
       target="_blank" rel="noopener noreferrer"
       className="hidden md:flex fixed bottom-7 end-7 z-50 w-14 h-14 bg-wa rounded-full items-center justify-center shadow-xl shadow-wa/20 hover:scale-110 transition-transform"
       initial={{ opacity: 0, scale: 0 }}
