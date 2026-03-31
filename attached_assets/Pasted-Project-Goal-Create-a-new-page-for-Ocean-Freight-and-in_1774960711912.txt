@@ -1,0 +1,36 @@
+Project Goal: Create a new page for "Ocean Freight" (الشحن البحري) and integrate it into my existing React project.
+1. Routing & Integration:
+Use react-router-dom to create a new route: /ocean-freight.
+Ensure the "Learn More" (اعرف المزيد) button in the Air/Ocean Freight section of the Home page links to this new route.
+Add a "Back to Home" (عودة للرئيسية) button at the top/navigation bar of the new page.
+2. Visual Identity & UX:
+Theme: Follow the existing brand identity (Colors, Typography, Spacing).
+Responsiveness: Fully responsive design. Cards and tables must stack vertically on mobile.
+Animations: Use framer-motion to implement "Fade-in Up" effects as the user scrolls through sections.
+Assets: Use images from public/assets/ (specifically the red/blue containers and ship types images) instead of placeholders.
+3. Page Structure & Content (Arabic):
+Section 1: Hero Section
+Title: "دليلك الشامل للشحن البحري"
+Background: High-quality container ship image.
+Overlay: Professional dark overlay for text readability.
+Section 2: Container Comparison (20 FT vs 40 FT)
+Format: Interactive Cards.
+Content:
+20 FT Container: (Dimensions: 6.06m x 2.44m x 2.59m | Volume: ~33m³ | Net Load: 21–28 Tons).
+40 FT Container: (Dimensions: 12.19m x 2.44m x 2.59m | Volume: ~67m³ | Net Load: 26–29 Tons).
+Decision Logic Section (متى تختار كل نوع؟):
+20 FT: للبضائع الثقيلة وكثافتها عالية (حديد، رخام، سيراميك) - تعتمد على الوزن.
+40 FT: للبضائع الخفيفة وكبيرة الحجم (أثاث، ملابس، كراتين) - تعتمد على الحجم لتوفير التكلفة.
+Section 3: Ship Types (Grid Layout)
+Layout: Minimalist Grid with icons.
+Data:
+Container Ship: العمود الفقري للتجارة العالمية، لنقل الحاويات القياسية.
+Ro-Ro Ship: للمركبات والمعدات المتحركة (سيارات، شاحنات).
+Bulk Carrier: لبضائع السائب مثل الحبوب، الفحم، والإسمنت.
+General Cargo Ship: سفن مرنة لشحنات متنوعة وغير موحدة.
+Tanker: لنقل السوائل (نفط، كيماويات، غاز).
+Reefer Ship: بضائع تحتاج تبريد (أطعمة، أدوية).
+Heavy Lift Vessel: للشحنات الثقيلة والضخمة غير التقليدية.
+4. Exact Arabic Text to Use:
+"عندك شحنة مُعينة ومش عارف تشحنها في حاوية 20 ولا حاوية 40؟ 📦🚢
+في عالم الشحن البحري، اختيار نوع الحاوية الصح ممكن يوفر عليك تكلفة كبيرة ويحسّن كفاءة الشحن عندك والاختيار الخاطئ ممكن يكلفك الاف الدولارات! 💰
