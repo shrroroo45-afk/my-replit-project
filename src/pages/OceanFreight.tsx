@@ -130,9 +130,8 @@ export default function OceanFreight() {
             transition={transition}
             className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 md:p-10 text-center"
           >
-            <div className="text-3xl mb-5">📦🚢</div>
             <p className="text-[16px] md:text-[17px] text-primary font-bold leading-[1.9] mb-4">
-              عندك شحنة مُعينة ومش عارف تشحنها في حاوية 20 ولا حاوية 40؟
+              عندك شحنة مُعينة ومش عارف تشحنها في حاوية 20 ولا حاوية 40؟ 📦🚢
             </p>
             <p className="text-[14.5px] md:text-[15.5px] text-gray-600 leading-[1.9]">
               في عالم الشحن البحري، اختيار نوع الحاوية الصح ممكن يوفر عليك تكلفة كبيرة ويحسّن كفاءة الشحن عندك
@@ -329,8 +328,7 @@ export default function OceanFreight() {
                 <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-accent mb-4 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                   {ship.icon}
                 </div>
-                <h3 className="text-[15px] font-extrabold text-primary mb-1">{ship.name}</h3>
-                <p className="text-[12px] text-accent font-semibold mb-3 uppercase tracking-wide">{ship.name_en}</p>
+                <h3 className="text-[15px] font-extrabold text-primary mb-3">{ship.name}</h3>
                 <p className="text-[13.5px] text-gray-500 leading-relaxed">{ship.desc}</p>
               </motion.div>
             ))}
