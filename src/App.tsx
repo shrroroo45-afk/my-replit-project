@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -17,9 +18,27 @@ import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
 import OceanFreight from './pages/OceanFreight';
 
+function HashScroller() {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const id = hash.replace('#', '');
+    const scroll = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    const timer = setTimeout(scroll, 80);
+    return () => clearTimeout(timer);
+  }, [hash]);
+  return null;
+}
+
 function HomePage() {
   return (
     <>
+      <HashScroller />
       <Navbar />
       <main>
         <Hero />
