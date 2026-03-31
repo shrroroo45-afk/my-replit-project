@@ -1,18 +1,21 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import {
-  ArrowRight, ArrowLeft, Boxes, Car, Layers, Package,
+  Boxes, Car, Layers, Package,
   Droplets, Snowflake, Anchor, MessageCircle, ChevronRight,
-  Scale, Maximize2
+  Scale, Maximize2, ArrowRight
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0 },
 };
+
+const transition = { duration: 0.55, ease: 'easeOut' as const };
 
 const shipTypes = [
   {
@@ -124,15 +127,16 @@ export default function OceanFreight() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 md:p-10"
+            transition={transition}
+            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 md:p-10 text-center"
           >
-            <div className="text-3xl mb-5 text-center">📦🚢</div>
-            <p className="text-[16px] md:text-[17px] text-primary font-bold leading-[1.8] text-center mb-4">
+            <div className="text-3xl mb-5">📦🚢</div>
+            <p className="text-[16px] md:text-[17px] text-primary font-bold leading-[1.9] mb-4">
               عندك شحنة مُعينة ومش عارف تشحنها في حاوية 20 ولا حاوية 40؟
             </p>
-            <p className="text-[14.5px] md:text-[15.5px] text-gray-600 leading-[1.9] text-center">
-              في عالم الشحن البحري، اختيار نوع الحاوية الصح ممكن يوفر عليك تكلفة كبيرة ويحسّن كفاءة الشحن عندك —
-              والاختيار الخاطئ ممكن يكلفك <span className="text-accent font-bold">آلاف الدولارات!</span> 💰
+            <p className="text-[14.5px] md:text-[15.5px] text-gray-600 leading-[1.9]">
+              في عالم الشحن البحري، اختيار نوع الحاوية الصح ممكن يوفر عليك تكلفة كبيرة ويحسّن كفاءة الشحن عندك
+              {' '}والاختيار الخاطئ ممكن يكلفك <span className="text-accent font-bold">الاف الدولارات!</span> 💰
             </p>
           </motion.div>
         </div>
@@ -145,6 +149,7 @@ export default function OceanFreight() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+            transition={transition}
             className="text-center mb-12"
           >
             <span className="text-accent text-[12px] font-bold uppercase tracking-[0.2em]">مقارنة الحاويات</span>
@@ -162,6 +167,7 @@ export default function OceanFreight() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
+              transition={transition}
               className="rounded-2xl border-2 border-primary/20 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="bg-primary px-6 py-5 text-center">
@@ -186,8 +192,8 @@ export default function OceanFreight() {
                   <div className="flex items-start gap-2.5">
                     <Scale size={16} className="text-accent mt-0.5 flex-shrink-0" />
                     <p className="text-[13.5px] text-gray-600 leading-relaxed">
-                      <span className="font-bold text-primary">الأنسب لـ:</span> البضائع الثقيلة وعالية الكثافة مثل{' '}
-                      <span className="text-accent font-semibold">الحديد، الرخام، السيراميك</span> — تعتمد على الوزن لا الحجم.
+                      <span className="font-bold text-primary">الأنسب لـ:</span> البضائع الثقيلة وكثافتها عالية مثل{' '}
+                      <span className="text-accent font-semibold">الحديد، الرخام، السيراميك</span> — تعتمد على الوزن.
                     </p>
                   </div>
                 </div>
@@ -199,7 +205,7 @@ export default function OceanFreight() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ ...transition, delay: 0.1 }}
               className="rounded-2xl border-2 border-accent/30 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="bg-gradient-to-br from-accent to-orange-500 px-6 py-5 text-center">
@@ -238,6 +244,7 @@ export default function OceanFreight() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+            transition={transition}
             className="bg-gradient-to-br from-primary to-navy rounded-2xl p-8 md:p-10 text-white"
           >
             <h3 className="text-[1.3rem] md:text-[1.5rem] font-extrabold mb-8 text-center">
@@ -253,13 +260,13 @@ export default function OceanFreight() {
                 </div>
                 <ul className="space-y-2.5">
                   {[
-                    'بضاعتك ثقيلة وكثيفة (حديد، رخام، سيراميك)',
+                    'بضاعتك ثقيلة وكثافتها عالية (حديد، رخام، سيراميك)',
                     'تعتمد على الوزن أكثر من الحجم',
                     'شحنة أقل حجماً لكن وزنها كبير',
-                  ].map(i => (
-                    <li key={i} className="flex items-start gap-2 text-[13.5px] text-blue-100/85">
+                  ].map(item => (
+                    <li key={item} className="flex items-start gap-2 text-[13.5px] text-blue-100/85">
                       <ChevronRight size={15} className="text-accent-light mt-0.5 flex-shrink-0" />
-                      {i}
+                      {item}
                     </li>
                   ))}
                 </ul>
@@ -273,13 +280,13 @@ export default function OceanFreight() {
                 </div>
                 <ul className="space-y-2.5">
                   {[
-                    'بضاعتك خفيفة وحجمها كبير (أثاث، ملابس، كراتين)',
+                    'بضاعتك خفيفة وكبيرة الحجم (أثاث، ملابس، كراتين)',
                     'تعتمد على الحجم لتوفير التكلفة',
                     'شحنة كبيرة الحجم نسبياً',
-                  ].map(i => (
-                    <li key={i} className="flex items-start gap-2 text-[13.5px] text-blue-100/85">
+                  ].map(item => (
+                    <li key={item} className="flex items-start gap-2 text-[13.5px] text-blue-100/85">
                       <ChevronRight size={15} className="text-accent-light mt-0.5 flex-shrink-0" />
-                      {i}
+                      {item}
                     </li>
                   ))}
                 </ul>
@@ -296,6 +303,7 @@ export default function OceanFreight() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+            transition={transition}
             className="text-center mb-12"
           >
             <span className="text-accent text-[12px] font-bold uppercase tracking-[0.2em]">أنواع السفن</span>
@@ -315,7 +323,7 @@ export default function OceanFreight() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
+                transition={{ ...transition, delay: i * 0.06 }}
                 className="bg-white rounded-2xl border border-gray-100 p-6 hover:border-accent/20 hover:shadow-lg hover:shadow-gray-100/80 transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-accent mb-4 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
@@ -336,6 +344,7 @@ export default function OceanFreight() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          transition={transition}
           className="max-w-2xl mx-auto px-5 text-center"
         >
           <div className="text-4xl mb-5">🚢</div>
