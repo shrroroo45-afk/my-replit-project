@@ -36,5 +36,5 @@ externalPort = 3000
 
 [deployment]
 deploymentTarget = "static"
-build = ["bash", "-c", "npm run build && cp dist/index.html dist/404.html"]
+build = ["npm", "run", "build"]
 publicDir = "dist"
