@@ -61,19 +61,9 @@ function HomePage() {
   );
 }
 
-function ScrollGuard() {
-  useEffect(() => {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-  }, []);
-  return null;
-}
-
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollGuard />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/ocean-freight" element={<OceanFreight />} />
