@@ -28,8 +28,8 @@ export default function Hero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 start-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-xl">
-              <p className="text-[22px] font-extrabold text-primary leading-none">4,000+</p>
-              <p className="text-[11px] text-gray-500 font-semibold mt-0.5">{t('Shipments Delivered', 'شحنة تم توصيلها')}</p>
+              <p className="text-[22px] font-extrabold text-primary leading-none">+200</p>
+              <p className="text-[11px] text-gray-500 font-semibold mt-0.5">{t('Clients Who Trust Us', 'عميل وثقوا بنا')}</p>
             </div>
             <div className="absolute top-4 end-4 bg-accent text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-lg">
               {t('China → Jordan', 'الصين → الأردن')}
@@ -57,12 +57,12 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href={`https://wa.me/962797540300?text=${encodeURIComponent(t('Hello, I need a shipping quote', 'مرحبا، أحتاج عرض سعر للشحن'))}`}
+              <a href={`https://wa.me/962791440828?text=${encodeURIComponent(t('Hello, I need a shipping quote', 'مرحبا، أحتاج عرض سعر للشحن'))}`}
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 px-7 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/25 active:scale-95">
                 {t('Get a Free Quote', 'احصل على عرض سعر مجاني')} <ArrowRight size={16} />
               </a>
-              <a href="tel:+962797540300"
+              <a href="tel:+962791440828"
                 className="flex items-center justify-center gap-2 px-7 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-xl font-bold text-[15px] hover:bg-white/20 transition-all active:scale-95">
                 <Phone size={16} /> {t('Call Now', 'اتصل الآن')}
               </a>
@@ -71,7 +71,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 mt-8">
               {[
                 { icon: <Shield size={14} />, en: 'Fully Insured', ar: 'تأمين كامل' },
-                { icon: <Clock size={14} />, en: '85% On-Time', ar: '85% التزام بالمواعيد' },
+                { icon: <Clock size={14} />, en: '24/7 Support', ar: 'دعم 24/7' },
                 { icon: <Globe size={14} />, en: 'China → Jordan', ar: 'الصين → الأردن' },
               ].map(b => (
                 <div key={b.en} className="flex items-center gap-1.5 text-[12.5px] text-blue-200/70 font-medium">
@@ -88,8 +88,8 @@ export default function Hero() {
                 <img src="/uploads/hero-ship.jpg" alt="Avatar Express Shipping" className="w-full h-[400px] object-cover" />
               </div>
               <div className="absolute -bottom-5 -start-5 bg-white rounded-xl shadow-xl border border-gray-100 px-5 py-4">
-                <p className="text-[26px] font-extrabold text-primary">4,000+</p>
-                <p className="text-[12px] text-gray-400 font-medium">{t('Shipments Delivered', 'شحنة تم توصيلها')}</p>
+                <p className="text-[26px] font-extrabold text-primary">+200</p>
+                <p className="text-[12px] text-gray-400 font-medium">{t('Clients Who Trust Us', 'عميل وثقوا بنا')}</p>
               </div>
             </div>
           </motion.div>

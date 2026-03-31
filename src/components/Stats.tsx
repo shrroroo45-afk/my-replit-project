@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import { useT } from '../lib/i18n';
-import { Package, Users, Clock, TrendingUp } from 'lucide-react';
+import { Users, Clock, ShieldCheck, Headphones } from 'lucide-react';
 
 export default function Stats() {
   const t = useT();
   const stats = [
-    { num: '4,000+', label: t('Shipments Delivered', 'شحنة تم توصيلها'), icon: <Package size={20} /> },
-    { num: '300+', label: t('Active Clients', 'عميل نشط'), icon: <Users size={20} /> },
-    { num: '85%', label: t('On-Time Delivery', 'التزام بمواعيد التسليم'), icon: <Clock size={20} /> },
-    { num: '35%', label: t('Growth vs 2024', 'نمو مقارنة بـ 2024'), icon: <TrendingUp size={20} /> },
+    { num: '+200', label: t('Clients Who Trust Us', 'عميل وثقوا بنا'), icon: <Users size={20} /> },
+    { num: '7-12', label: t('Days — Air Delivery', 'يوم — توصيل جوي سريع'), icon: <Clock size={20} /> },
+    { num: '24/7', label: t('Round-the-Clock Support', 'دعم متواصل على مدار الساعة'), icon: <Headphones size={20} /> },
+    { num: '100%', label: t('Full Customs Clearance', 'تخليص جمركي شامل'), icon: <ShieldCheck size={20} /> },
   ];
   return (
     <section className="py-14 md:py-20 bg-primary relative overflow-hidden">
