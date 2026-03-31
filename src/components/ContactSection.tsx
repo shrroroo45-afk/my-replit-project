@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, Mail, MapPin, Clock, Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, Clock, Send, CheckCircle2, Loader2, Facebook } from 'lucide-react';
 import { useT } from '../lib/i18n';
 
 export default function ContactSection() {
@@ -41,7 +41,8 @@ export default function ContactSection() {
               { icon: <Phone size={17} />, label: t('Phone 1', 'هاتف 1'), value: '+962 79 754 0300', href: 'tel:+962797540300', color: 'bg-primary-50 text-accent' },
               { icon: <Phone size={17} />, label: t('Phone 2', 'هاتف 2'), value: '+962 79 144 0828', href: 'tel:+962791440828', color: 'bg-primary-50 text-accent' },
               { icon: <MessageCircle size={17} />, label: t('WhatsApp', 'واتساب'), value: t('Message Us', 'راسلنا'), href: 'https://wa.me/962797540300', ext: true, color: 'bg-green-50 text-wa' },
-              { icon: <Mail size={17} />, label: t('Email', 'البريد'), value: 'info@avatarexpress.jo', href: 'mailto:info@avatarexpress.jo', color: 'bg-primary-50 text-accent' },
+              { icon: <Mail size={17} />, label: t('Email', 'البريد'), value: 'info@avatarlogistic.com', href: 'mailto:info@avatarlogistic.com', color: 'bg-primary-50 text-accent' },
+              { icon: <Facebook size={17} />, label: t('Facebook', 'فيسبوك'), value: t('Avatar Express', 'Avatar Express'), href: 'https://www.facebook.com/share/1DUTxDuufn/', ext: true, color: 'bg-blue-50 text-blue-600' },
             ].map(c => (
               <a key={c.label} href={c.href} target={c.ext ? '_blank' : undefined} rel={c.ext ? 'noopener noreferrer' : undefined}
                 className="flex items-center gap-3.5 rounded-xl border border-gray-100 bg-white p-4 hover:border-accent/20 hover:shadow-md hover:shadow-accent/5 transition-all group">
