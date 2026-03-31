@@ -9,68 +9,95 @@ import {
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useT, useLang } from '../lib/i18n';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 },
 };
 
-const transition = { duration: 0.55, ease: 'easeOut' as const };
-
-const shipTypes = [
-  {
-    icon: <Boxes size={28} />,
-    name: 'السفينة الحاوية',
-    name_en: 'Container Ship',
-    desc: 'العمود الفقري للتجارة العالمية، لنقل الحاويات القياسية.',
-  },
-  {
-    icon: <Car size={28} />,
-    name: 'سفينة رو-رو',
-    name_en: 'Ro-Ro Ship',
-    desc: 'للمركبات والمعدات المتحركة (سيارات، شاحنات).',
-  },
-  {
-    icon: <Layers size={28} />,
-    name: 'ناقلة البضائع السائبة',
-    name_en: 'Bulk Carrier',
-    desc: 'لبضائع السائب مثل الحبوب، الفحم، والإسمنت.',
-  },
-  {
-    icon: <Package size={28} />,
-    name: 'سفينة البضائع العامة',
-    name_en: 'General Cargo Ship',
-    desc: 'سفن مرنة لشحنات متنوعة وغير موحدة.',
-  },
-  {
-    icon: <Droplets size={28} />,
-    name: 'ناقلة',
-    name_en: 'Tanker',
-    desc: 'لنقل السوائل (نفط، كيماويات، غاز).',
-  },
-  {
-    icon: <Snowflake size={28} />,
-    name: 'سفينة ريفر',
-    name_en: 'Reefer Ship',
-    desc: 'بضائع تحتاج تبريد (أطعمة، أدوية).',
-  },
-  {
-    icon: <Anchor size={28} />,
-    name: 'سفينة الرافعة الثقيلة',
-    name_en: 'Heavy Lift Vessel',
-    desc: 'للشحنات الثقيلة والضخمة غير التقليدية.',
-  },
-];
+const tr = { duration: 0.55, ease: 'easeOut' as const };
 
 export default function OceanFreight() {
+  const t = useT();
+  const { lang } = useLang();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const waLink = `https://wa.me/962797540300?text=${encodeURIComponent('مرحبا، أريد الاستفسار عن خدمات الشحن البحري')}`;
+  const dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+  const waMsg = encodeURIComponent(t(
+    'Hello, I would like to inquire about ocean freight services',
+    'مرحبا، أريد الاستفسار عن خدمات الشحن البحري'
+  ));
+  const waLink = `https://wa.me/962797540300?text=${waMsg}`;
+
+  const shipTypes = [
+    {
+      icon: <Boxes size={28} />,
+      name: t('Container Ship', 'السفينة الحاوية'),
+      desc: t('The backbone of global trade, used to transport standard containers.', 'العمود الفقري للتجارة العالمية، لنقل الحاويات القياسية.'),
+    },
+    {
+      icon: <Car size={28} />,
+      name: t('Ro-Ro Ship', 'سفينة رو-رو'),
+      desc: t('For wheeled vehicles and mobile equipment (cars, trucks).', 'للمركبات والمعدات المتحركة (سيارات، شاحنات).'),
+    },
+    {
+      icon: <Layers size={28} />,
+      name: t('Bulk Carrier', 'ناقلة البضائع السائبة'),
+      desc: t('For bulk cargo such as grain, coal, and cement.', 'لبضائع السائب مثل الحبوب، الفحم، والإسمنت.'),
+    },
+    {
+      icon: <Package size={28} />,
+      name: t('General Cargo Ship', 'سفينة البضائع العامة'),
+      desc: t('Flexible vessels for diverse and non-standardized shipments.', 'سفن مرنة لشحنات متنوعة وغير موحدة.'),
+    },
+    {
+      icon: <Droplets size={28} />,
+      name: t('Tanker', 'ناقلة'),
+      desc: t('For transporting liquids (oil, chemicals, gas).', 'لنقل السوائل (نفط، كيماويات، غاز).'),
+    },
+    {
+      icon: <Snowflake size={28} />,
+      name: t('Reefer Ship', 'سفينة ريفر'),
+      desc: t('For temperature-sensitive cargo (food, medicine).', 'بضائع تحتاج تبريد (أطعمة، أدوية).'),
+    },
+    {
+      icon: <Anchor size={28} />,
+      name: t('Heavy Lift Vessel', 'سفينة الرافعة الثقيلة'),
+      desc: t('For heavy and oversized non-conventional shipments.', 'للشحنات الثقيلة والضخمة غير التقليدية.'),
+    },
+  ];
+
+  const specs20 = [
+    { label: t('Interior Dimensions', 'الأبعاد الداخلية'), value: '6.06m × 2.44m × 2.59m' },
+    { label: t('Approx. Volume', 'الحجم التقريبي'), value: '~33 m³' },
+    { label: t('Net Load', 'الحمولة الصافية'), value: '21 – 28 t' },
+  ];
+
+  const specs40 = [
+    { label: t('Interior Dimensions', 'الأبعاد الداخلية'), value: '12.19m × 2.44m × 2.59m' },
+    { label: t('Approx. Volume', 'الحجم التقريبي'), value: '~67 m³' },
+    { label: t('Net Load', 'الحمولة الصافية'), value: '26 – 29 t' },
+  ];
+
+  const items20 = [
+    t('Heavy, high-density cargo (iron, marble, ceramics)', 'بضاعتك ثقيلة وكثافتها عالية (حديد، رخام، سيراميك)'),
+    t('Shipments that rely on weight more than volume', 'تعتمد على الوزن أكثر من الحجم'),
+    t('Smaller volume but heavy cargo', 'شحنة أقل حجماً لكن وزنها كبير'),
+  ];
+
+  const items40 = [
+    t('Light, high-volume cargo (furniture, clothes, cartons)', 'بضاعتك خفيفة وكبيرة الحجم (أثاث، ملابس، كراتين)'),
+    t('Shipments that rely on volume to save cost', 'تعتمد على الحجم لتوفير التكلفة'),
+    t('Relatively large volume cargo', 'شحنة كبيرة الحجم نسبياً'),
+  ];
 
   return (
-    <div className="min-h-screen bg-white" dir="rtl" lang="ar">
+    <div className="min-h-screen bg-white" dir={dir} lang={lang}>
       <Navbar />
 
       <div className="sticky top-[64px] z-40 bg-white border-b border-gray-100 shadow-sm">
@@ -80,17 +107,17 @@ export default function OceanFreight() {
             className="inline-flex items-center gap-2 text-[13px] font-bold text-primary hover:text-accent transition-colors"
           >
             <ArrowRight size={15} />
-            عودة للرئيسية
+            {t('Back to Home', 'عودة للرئيسية')}
           </Link>
           <span className="mx-3 text-gray-200">|</span>
-          <span className="text-[13px] text-gray-400">دليل الشحن البحري</span>
+          <span className="text-[13px] text-gray-400">{t('Ocean Freight Guide', 'دليل الشحن البحري')}</span>
         </div>
       </div>
 
       <section className="relative min-h-[420px] md:min-h-[520px] flex items-center justify-center overflow-hidden">
         <img
           src="/uploads/sea-freight.jpg"
-          alt="الشحن البحري"
+          alt={t('Ocean Freight', 'الشحن البحري')}
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-navy/90" />
@@ -101,13 +128,16 @@ export default function OceanFreight() {
           className="relative z-10 text-center px-5 max-w-3xl mx-auto"
         >
           <span className="inline-block bg-accent/20 text-accent-light text-[12px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-5 border border-accent/30">
-            خدمة الشحن البحري
+            {t('Ocean Freight Service', 'خدمة الشحن البحري')}
           </span>
-          <h1 className="text-[2rem] sm:text-[2.6rem] md:text-[3rem] font-extrabold text-white leading-[1.25] mb-5">
-            دليلك الشامل للشحن البحري
+          <h1 className="text-[2rem] sm:text-[2.6rem] md:text-[3rem] font-extrabold text-white leading-[1.35] mb-5">
+            {t('Your Comprehensive Guide to Ocean Freight', 'دليلك الشامل للشحن البحري')}
           </h1>
           <p className="text-[15px] md:text-[16px] text-blue-100/80 leading-relaxed max-w-xl mx-auto mb-8">
-            من اختيار نوع الحاوية الصح إلى أنواع السفن — كل ما تحتاج معرفته لشحن بضاعتك بأقل تكلفة وأعلى كفاءة.
+            {t(
+              'From choosing the right container to ship types — everything you need to know to ship your cargo at the lowest cost and highest efficiency.',
+              'من اختيار نوع الحاوية الصح إلى أنواع السفن — كل ما تحتاج معرفته لشحن بضاعتك بأقل تكلفة وأعلى كفاءة.'
+            )}
           </p>
           <a
             href={waLink}
@@ -115,7 +145,7 @@ export default function OceanFreight() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/25 active:scale-95"
           >
-            <MessageCircle size={17} /> استفسر الآن عبر واتساب
+            <MessageCircle size={17} /> {t('Inquire Now via WhatsApp', 'استفسر الآن عبر واتساب')}
           </a>
         </motion.div>
       </section>
@@ -127,15 +157,24 @@ export default function OceanFreight() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            transition={transition}
+            transition={tr}
             className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 md:p-10 text-center"
           >
             <p className="text-[16px] md:text-[17px] text-primary font-bold leading-[1.9] mb-4">
-              عندك شحنة مُعينة ومش عارف تشحنها في حاوية 20 ولا حاوية 40؟ 📦🚢
+              {t(
+                'Do you have a specific shipment and are not sure whether to ship it in a 20 or 40 ft container? 📦🚢',
+                'عندك شحنة مُعينة ولا تعرف هل تشحنها في حاوية 20 أم حاوية 40؟ 📦🚢'
+              )}
             </p>
             <p className="text-[14.5px] md:text-[15.5px] text-gray-600 leading-[1.9]">
-              في عالم الشحن البحري، اختيار نوع الحاوية الصح ممكن يوفر عليك تكلفة كبيرة ويحسّن كفاءة الشحن عندك
-              {' '}والاختيار الخاطئ ممكن يكلفك <span className="text-accent font-bold">الاف الدولارات!</span> 💰
+              {t(
+                'In ocean freight, choosing the right container type can save you significant costs and improve your shipping efficiency — and the wrong choice can cost you ',
+                'في عالم الشحن البحري، اختيار نوع الحاوية الصح ممكن يوفر عليك تكلفة كبيرة ويحسّن كفاءة الشحن عندك — والاختيار الخاطئ ممكن يكلفك '
+              )}
+              <span className="text-accent font-bold">
+                {t('thousands of dollars!', 'الاف الدولارات!')}
+              </span>
+              {' '}💰
             </p>
           </motion.div>
         </div>
@@ -148,15 +187,17 @@ export default function OceanFreight() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            transition={transition}
+            transition={tr}
             className="text-center mb-12"
           >
-            <span className="text-accent text-[12px] font-bold uppercase tracking-[0.2em]">مقارنة الحاويات</span>
+            <span className="text-accent text-[12px] font-bold uppercase tracking-[0.2em]">
+              {t('Container Comparison', 'مقارنة الحاويات')}
+            </span>
             <h2 className="text-[1.75rem] md:text-[2.2rem] font-extrabold text-primary mt-2 leading-tight">
-              حاوية 20 قدم مقابل حاوية 40 قدم
+              {t('20 FT vs 40 FT Container', 'حاوية 20 قدم مقابل حاوية 40 قدم')}
             </h2>
             <p className="text-gray-500 text-[15px] mt-3 max-w-md mx-auto">
-              اختار الحاوية المناسبة بناءً على طبيعة بضاعتك وحجمها ووزنها
+              {t('Choose the right container based on your cargo type, size, and weight.', 'اختار الحاوية المناسبة بناءً على طبيعة بضاعتك وحجمها ووزنها')}
             </p>
           </motion.div>
 
@@ -166,21 +207,17 @@ export default function OceanFreight() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={transition}
+              transition={tr}
               className="rounded-2xl border-2 border-primary/20 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="bg-primary px-6 py-5 text-center">
-                <p className="text-accent-light text-[12px] font-bold uppercase tracking-widest mb-1">حاوية</p>
-                <h3 className="text-white text-[2rem] font-extrabold">20 قدم</h3>
+                <p className="text-accent-light text-[12px] font-bold uppercase tracking-widest mb-1">{t('Container', 'حاوية')}</p>
+                <h3 className="text-white text-[2rem] font-extrabold">{t('20 FT', '20 قدم')}</h3>
                 <p className="text-blue-200/70 text-[13px] mt-1">20 FT Container</p>
               </div>
               <div className="p-6 md:p-8">
                 <div className="space-y-4 mb-6">
-                  {[
-                    { label: 'الأبعاد الداخلية', value: '6.06م × 2.44م × 2.59م' },
-                    { label: 'الحجم التقريبي', value: '~33 م³' },
-                    { label: 'الحمولة الصافية', value: '21 – 28 طن' },
-                  ].map(r => (
+                  {specs20.map(r => (
                     <div key={r.label} className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0">
                       <span className="text-[13.5px] text-gray-500 font-medium">{r.label}</span>
                       <span className="text-[14px] font-bold text-primary">{r.value}</span>
@@ -191,8 +228,12 @@ export default function OceanFreight() {
                   <div className="flex items-start gap-2.5">
                     <Scale size={16} className="text-accent mt-0.5 flex-shrink-0" />
                     <p className="text-[13.5px] text-gray-600 leading-relaxed">
-                      <span className="font-bold text-primary">الأنسب لـ:</span> البضائع الثقيلة وكثافتها عالية مثل{' '}
-                      <span className="text-accent font-semibold">الحديد، الرخام، السيراميك</span> — تعتمد على الوزن.
+                      <span className="font-bold text-primary">{t('Best for:', 'الأنسب لـ:')}</span>{' '}
+                      {t('Heavy, high-density cargo such as ', 'البضائع الثقيلة وكثافتها عالية مثل ')}
+                      <span className="text-accent font-semibold">
+                        {t('iron, marble, ceramics', 'الحديد، الرخام، السيراميك')}
+                      </span>
+                      {' '}— {t('relies on weight.', 'تعتمد على الوزن.')}
                     </p>
                   </div>
                 </div>
@@ -204,21 +245,17 @@ export default function OceanFreight() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={{ ...transition, delay: 0.1 }}
+              transition={{ ...tr, delay: 0.1 }}
               className="rounded-2xl border-2 border-accent/30 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="bg-gradient-to-br from-accent to-orange-500 px-6 py-5 text-center">
-                <p className="text-white/80 text-[12px] font-bold uppercase tracking-widest mb-1">حاوية</p>
-                <h3 className="text-white text-[2rem] font-extrabold">40 قدم</h3>
+                <p className="text-white/80 text-[12px] font-bold uppercase tracking-widest mb-1">{t('Container', 'حاوية')}</p>
+                <h3 className="text-white text-[2rem] font-extrabold">{t('40 FT', '40 قدم')}</h3>
                 <p className="text-white/70 text-[13px] mt-1">40 FT Container</p>
               </div>
               <div className="p-6 md:p-8">
                 <div className="space-y-4 mb-6">
-                  {[
-                    { label: 'الأبعاد الداخلية', value: '12.19م × 2.44م × 2.59م' },
-                    { label: 'الحجم التقريبي', value: '~67 م³' },
-                    { label: 'الحمولة الصافية', value: '26 – 29 طن' },
-                  ].map(r => (
+                  {specs40.map(r => (
                     <div key={r.label} className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0">
                       <span className="text-[13.5px] text-gray-500 font-medium">{r.label}</span>
                       <span className="text-[14px] font-bold text-primary">{r.value}</span>
@@ -229,8 +266,12 @@ export default function OceanFreight() {
                   <div className="flex items-start gap-2.5">
                     <Maximize2 size={16} className="text-accent mt-0.5 flex-shrink-0" />
                     <p className="text-[13.5px] text-gray-600 leading-relaxed">
-                      <span className="font-bold text-primary">الأنسب لـ:</span> البضائع الخفيفة وكبيرة الحجم مثل{' '}
-                      <span className="text-accent font-semibold">الأثاث، الملابس، الكراتين</span> — تعتمد على الحجم لتوفير التكلفة.
+                      <span className="font-bold text-primary">{t('Best for:', 'الأنسب لـ:')}</span>{' '}
+                      {t('Light, high-volume cargo such as ', 'البضائع الخفيفة وكبيرة الحجم مثل ')}
+                      <span className="text-accent font-semibold">
+                        {t('furniture, clothes, cartons', 'الأثاث، الملابس، الكراتين')}
+                      </span>
+                      {' '}— {t('relies on volume to save cost.', 'تعتمد على الحجم لتوفير التكلفة.')}
                     </p>
                   </div>
                 </div>
@@ -243,11 +284,11 @@ export default function OceanFreight() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            transition={transition}
+            transition={tr}
             className="bg-gradient-to-br from-primary to-navy rounded-2xl p-8 md:p-10 text-white"
           >
             <h3 className="text-[1.3rem] md:text-[1.5rem] font-extrabold mb-8 text-center">
-              متى تختار كل نوع؟
+              {t('When to Choose Each Type?', 'متى تختار كل نوع؟')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
@@ -255,14 +296,10 @@ export default function OceanFreight() {
                   <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
                     <Scale size={18} className="text-accent-light" />
                   </div>
-                  <h4 className="text-[1rem] font-bold">اختر حاوية 20 قدم إذا:</h4>
+                  <h4 className="text-[1rem] font-bold">{t('Choose 20 FT if:', 'اختر حاوية 20 قدم إذا:')}</h4>
                 </div>
                 <ul className="space-y-2.5">
-                  {[
-                    'بضاعتك ثقيلة وكثافتها عالية (حديد، رخام، سيراميك)',
-                    'تعتمد على الوزن أكثر من الحجم',
-                    'شحنة أقل حجماً لكن وزنها كبير',
-                  ].map(item => (
+                  {items20.map(item => (
                     <li key={item} className="flex items-start gap-2 text-[13.5px] text-blue-100/85">
                       <ChevronRight size={15} className="text-accent-light mt-0.5 flex-shrink-0" />
                       {item}
@@ -275,14 +312,10 @@ export default function OceanFreight() {
                   <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
                     <Maximize2 size={18} className="text-accent-light" />
                   </div>
-                  <h4 className="text-[1rem] font-bold">اختر حاوية 40 قدم إذا:</h4>
+                  <h4 className="text-[1rem] font-bold">{t('Choose 40 FT if:', 'اختر حاوية 40 قدم إذا:')}</h4>
                 </div>
                 <ul className="space-y-2.5">
-                  {[
-                    'بضاعتك خفيفة وكبيرة الحجم (أثاث، ملابس، كراتين)',
-                    'تعتمد على الحجم لتوفير التكلفة',
-                    'شحنة كبيرة الحجم نسبياً',
-                  ].map(item => (
+                  {items40.map(item => (
                     <li key={item} className="flex items-start gap-2 text-[13.5px] text-blue-100/85">
                       <ChevronRight size={15} className="text-accent-light mt-0.5 flex-shrink-0" />
                       {item}
@@ -302,15 +335,17 @@ export default function OceanFreight() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            transition={transition}
+            transition={tr}
             className="text-center mb-12"
           >
-            <span className="text-accent text-[12px] font-bold uppercase tracking-[0.2em]">أنواع السفن</span>
+            <span className="text-accent text-[12px] font-bold uppercase tracking-[0.2em]">
+              {t('Ship Types', 'أنواع السفن')}
+            </span>
             <h2 className="text-[1.75rem] md:text-[2.2rem] font-extrabold text-primary mt-2 leading-tight">
-              أنواع سفن الشحن البحري
+              {t('Types of Ocean Freight Ships', 'أنواع سفن الشحن البحري')}
             </h2>
             <p className="text-gray-500 text-[15px] mt-3 max-w-md mx-auto">
-              كل نوع من السفن مصمم لغرض تجاري محدد — اعرف الفرق
+              {t('Each ship type is designed for a specific commercial purpose — know the difference.', 'كل نوع من السفن مصمم لغرض تجاري محدد — اعرف الفرق')}
             </p>
           </motion.div>
 
@@ -322,7 +357,7 @@ export default function OceanFreight() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ ...transition, delay: i * 0.06 }}
+                transition={{ ...tr, delay: i * 0.06 }}
                 className="bg-white rounded-2xl border border-gray-100 p-6 hover:border-accent/20 hover:shadow-lg hover:shadow-gray-100/80 transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-accent mb-4 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
@@ -342,15 +377,18 @@ export default function OceanFreight() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          transition={transition}
+          transition={tr}
           className="max-w-2xl mx-auto px-5 text-center"
         >
           <div className="text-4xl mb-5">🚢</div>
           <h2 className="text-[1.75rem] md:text-[2.1rem] font-extrabold text-white mb-4 leading-tight">
-            جاهز تشحن بضاعتك من الصين؟
+            {t('Ready to ship your cargo from China?', 'جاهز لشحن بضاعتك من الصين؟')}
           </h2>
           <p className="text-blue-100/75 text-[15px] leading-relaxed mb-8">
-            فريقنا يساعدك تختار الحاوية الصح والمسار الأمثل لشحنتك — تواصل معنا الآن وخليها علينا.
+            {t(
+              'Our team helps you choose the right container and the optimal route for your shipment — contact us now and leave it to us.',
+              'فريقنا يساعدك تختار الحاوية الصح والمسار الأمثل لشحنتك — تواصل معنا الآن وخليها علينا.'
+            )}
           </p>
           <a
             href={waLink}
@@ -359,7 +397,7 @@ export default function OceanFreight() {
             className="inline-flex items-center gap-2.5 px-8 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/25 active:scale-95"
           >
             <MessageCircle size={18} />
-            تواصل معنا عبر واتساب
+            {t('Contact Us via WhatsApp', 'تواصل معنا عبر واتساب')}
           </a>
           <div className="mt-6">
             <Link
@@ -367,7 +405,7 @@ export default function OceanFreight() {
               className="inline-flex items-center gap-2 text-[13px] text-blue-200/60 hover:text-white transition-colors font-medium"
             >
               <ArrowRight size={14} />
-              عودة للصفحة الرئيسية
+              {t('Back to Home Page', 'عودة للصفحة الرئيسية')}
             </Link>
           </div>
         </motion.div>
