@@ -18,11 +18,8 @@ export default function FinalCTA() {
                 className="flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-extrabold text-[15px] hover:bg-accent-light transition-colors shadow-lg shadow-accent/25">
                 {t('Get a Free Quote', 'احصل على عرض سعر')} <ArrowRight size={16} />
               </a>
-              <a href="tel:+962797540300" className="flex items-center gap-2 px-6 py-4 border-2 border-white/20 text-white rounded-xl font-bold text-[15px] hover:bg-white/10 transition-colors">
-                <Phone size={16} /> 0797540300
-              </a>
-              <a href="tel:+962791440828" className="flex items-center gap-2 px-6 py-4 border-2 border-white/20 text-white rounded-xl font-bold text-[15px] hover:bg-white/10 transition-colors">
-                <Phone size={16} /> 0791440828
+              <a href="tel:+962797540300" className="flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white rounded-xl font-bold text-[15px] hover:bg-white/10 transition-colors">
+                <Phone size={16} /> {t('Call Now', 'اتصل الآن')}
               </a>
             </div>
           </div>

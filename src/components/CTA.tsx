@@ -22,12 +22,8 @@ export default function CTA() {
                 احصل على عرض سعر <ArrowLeft size={16} />
               </a>
               <a href="tel:+962797540300"
-                className="flex items-center gap-2 px-6 py-3.5 border-2 border-white/25 text-white rounded-xl font-bold text-[15px] hover:bg-white/10 transition-colors">
-                <Phone size={16} /> 0797540300
-              </a>
-              <a href="tel:+962791440828"
-                className="flex items-center gap-2 px-6 py-3.5 border-2 border-white/25 text-white rounded-xl font-bold text-[15px] hover:bg-white/10 transition-colors">
-                <Phone size={16} /> 0791440828
+                className="flex items-center gap-2 px-8 py-3.5 border-2 border-white/25 text-white rounded-xl font-bold text-[15px] hover:bg-white/10 transition-colors">
+                <Phone size={16} /> اتصل الآن
               </a>
             </div>
           </div>
