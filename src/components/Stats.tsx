@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import { useT } from '../lib/i18n';
-import { Package, Users, Clock, Star } from 'lucide-react';
+import { Package, Users, Clock, TrendingUp } from 'lucide-react';
 
 export default function Stats() {
   const t = useT();
   const stats = [
-    { num: '5,000+', label: t('Shipments Delivered', 'شحنة تم توصيلها'), icon: <Package size={20} /> },
-    { num: '500+', label: t('Business Clients', 'عميل تجاري'), icon: <Users size={20} /> },
-    { num: '99%', label: t('On-Time Delivery', 'تسليم في الوقت'), icon: <Clock size={20} /> },
-    { num: '3+', label: t('Years of Excellence', 'سنوات من التميز'), icon: <Star size={20} /> },
+    { num: '4,000+', label: t('Shipments Delivered', 'شحنة تم توصيلها'), icon: <Package size={20} /> },
+    { num: '300+', label: t('Active Clients', 'عميل نشط'), icon: <Users size={20} /> },
+    { num: '85%', label: t('On-Time Delivery', 'التزام بمواعيد التسليم'), icon: <Clock size={20} /> },
+    { num: '35%', label: t('Growth vs 2024', 'نمو مقارنة بـ 2024'), icon: <TrendingUp size={20} /> },
   ];
   return (
     <section className="py-14 md:py-20 bg-primary relative overflow-hidden">
