@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -14,8 +15,9 @@ import Footer from './components/Footer';
 import MobileSticky from './components/MobileSticky';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
+import OceanFreight from './pages/OceanFreight';
 
-export default function App() {
+function HomePage() {
   return (
     <>
       <Navbar />
@@ -37,5 +39,16 @@ export default function App() {
       <WhatsAppButton />
       <ScrollToTop />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/ocean-freight" element={<OceanFreight />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

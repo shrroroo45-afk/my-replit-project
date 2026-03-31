@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Plane, Truck, MapPin, FileCheck, Boxes, ArrowRight, MessageCircle } from 'lucide-react';
 import { useT } from '../lib/i18n';
 
@@ -12,6 +13,7 @@ export default function Services() {
       desc: t('Fast and economical shipping for parcels and cargo. Express air delivery in 7–12 days or cost-effective sea freight for larger shipments.', 'شحن سريع واقتصادي للطرود والبضائع. توصيل جوي سريع خلال 7-12 يوم أو شحن بحري اقتصادي للشحنات الكبيرة.'),
       img: '/uploads/air-freight.jpg',
       tag: t('7–12 Days', '7-12 يوم'),
+      learnMoreTo: '/ocean-freight',
     },
     {
       icon: <Truck size={26} />,
@@ -97,11 +99,18 @@ export default function Services() {
                 </div>
                 <h3 className="text-[1.25rem] md:text-[1.4rem] font-extrabold text-primary mb-3">{s.title}</h3>
                 <p className="text-[14.5px] text-gray-500 leading-relaxed mb-6">{s.desc}</p>
-                <a href={`https://wa.me/962797540300?text=${encodeURIComponent(t(`Hello, I'm interested in ${s.title}`, `مرحبا، أريد الاستفسار عن ${s.title}`))}`}
-                  target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[14px] font-bold text-accent hover:text-primary transition-colors w-fit">
-                  {t('Learn More', 'اعرف المزيد')} <ArrowRight size={15} />
-                </a>
+                {s.learnMoreTo ? (
+                  <Link to={s.learnMoreTo}
+                    className="inline-flex items-center gap-1.5 text-[14px] font-bold text-accent hover:text-primary transition-colors w-fit">
+                    {t('Learn More', 'اعرف المزيد')} <ArrowRight size={15} />
+                  </Link>
+                ) : (
+                  <a href={`https://wa.me/962797540300?text=${encodeURIComponent(t(`Hello, I'm interested in ${s.title}`, `مرحبا، أريد الاستفسار عن ${s.title}`))}`}
+                    target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-[14px] font-bold text-accent hover:text-primary transition-colors w-fit">
+                    {t('Learn More', 'اعرف المزيد')} <ArrowRight size={15} />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
