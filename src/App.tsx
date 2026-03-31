@@ -19,19 +19,19 @@ import ScrollToTop from './components/ScrollToTop';
 import OceanFreight from './pages/OceanFreight';
 
 function HashScroller() {
-  const { hash } = useLocation();
+  const { hash, pathname } = useLocation();
   useEffect(() => {
-    if (!hash) return;
-    const id = hash.replace('#', '');
-    const scroll = () => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    };
-    const timer = setTimeout(scroll, 80);
-    return () => clearTimeout(timer);
-  }, [hash]);
+    if (hash) {
+      const id = hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 80);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [hash, pathname]);
   return null;
 }
 
@@ -61,9 +61,19 @@ function HomePage() {
   );
 }
 
+function ScrollGuard() {
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+  return null;
+}
+
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollGuard />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/ocean-freight" element={<OceanFreight />} />
