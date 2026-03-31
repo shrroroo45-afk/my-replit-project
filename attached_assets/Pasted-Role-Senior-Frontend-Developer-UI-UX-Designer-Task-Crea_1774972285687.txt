@@ -1,0 +1,59 @@
+Role: Senior Frontend Developer & UI/UX Designer.
+Task: Create and integrate a new comprehensive "Air Freight" (الشحن الجوي) page for the "Avatar Express" website.
+1. Core Concept & Visual Identity
+Page Purpose: A dedicated landing page for Air Freight services that opens when the user clicks "Learn More" (اعرف المزيد).
+Theme: Maintain the "Avatar Express" brand identity The design must have a modern, sleek aviation feel.
+Layout: Fully responsive (Mobile-first) with RTL (Right-to-Left) support for Arabic text.
+2. Page Structure & Sections
+Section A: Hero Section (The Landing)
+Content: A high-resolution background image of a cargo plane.
+Headline: "شحن جوي سريع وآمن إلى جميع الوجهات ✈️" (in a bold, elegant font).
+Interactions: Use Framer Motion to create an entrance animation where a plane icon or image "takes off" (slides in from the bottom-left to top-right) when the page loads.
+Section B: "Save Your Time" (وفر وقتك)
+Feature: Create a Highlighted Card with a glowing border or distinct background.
+Text: "الشراء من الصين والشحن طيران شامل التخليص الجمركي".
+Additional Service: Add a sub-feature: "الشراء من خلالنا لتوفير السعر والخدمة الأسرع".
+Section C: Educational Tool (Volumetric Weight - الوزن الحجمي)
+Concept: Explain the rule: "الأكبر بين الوزن الفعلي والحجمي هو المعتمد".
+Visual: An illustration showing a scale (ميزان) next to a large box (صندوق كبير). Include a simple formula or visual guide explaining why volume matters in air freight.
+Section D: "How It Works" (رحلة شحنتك - آلية الاستيراد الجوي)
+
+Volumetric Weight Guide Content:
+The Dilemma: Actual Weight vs. Volumetric Weight.
+Concept 1: Actual Weight (الوزن الفعلي). What the shipment actually weighs on a scale (Example: Heavy small items).
+Concept 2: Volumetric Weight (الوزن الحجمي). An estimated weight based on the space the shipment occupies (Example: Large light items).
+Formula: (Length x Width x Height) / 6000.
+The Golden Rule (قاعدة الناقل):
+"The chargeable weight is always the GREATER of the two weights
+Layout: A modern interactive Vertical Timeline or Horizontal Stepper.
+Steps (7 Steps):
+الخطوة 1: إعداد الشحنة (تجهيز البضاعة والمستندات من المصدر).
+الخطوة 2: التخليص الجمركي للتصدير (إنهاء الإجراءات في بلد المنشأ).
+الخطوة 3: مناولة الطيران (إصدار بوليصة الشحن AWB وتسليم الشحنة للمطار).
+الخطوة 4: النقل الجوي (انطلاق الرحلة الدولية).
+الخطوة 5: الوصول والمناولة الأرضية (تفريغ الشحنة وتخزينها المؤقت عند الوصول).
+الخطوة 6: التخليص الجمركي للاستيراد (تقييم الرسوم والضرائب في الأردن).
+الخطوة 7: التسليم النهائي (الإفراج عن الشحنة وتوصيلها لمستودع المستورد).
+Animation: Use scroll-triggered animations (fade-in) for each step as the user scrolls down.
+Section E: Required Documents (المستندات المطلوبة)
+Layout: A clean grid with professional icons.
+Documents List:
+بوليصة الشحن (AWB)
+الفاتورة التجارية (Invoice)
+قائمة التعبئة (Packing List)
+بيان الاستيراد
+أمر التسليم
+شهادة المنشأ
+3. Navigation & CTA (Call to Action)
+Floating/Fixed Buttons:
+"ابدأ الشحن الآن": A prominent button linked to WhatsApp.
+"عودة": A secondary button to return to the Home Page.
+Footer: Display contact info clearly:
+Location: "Amman - Sweifieh"
+Phone numbers: [Insert phone numbers from the image here].
+4. Technical Requirements
+Framework: (React.js/Next.js/HTML as per the current project).
+Animations: Framer Motion for smooth transitions and scroll-reveal effects.
+Icons: Use Lucide-React or FontAwesome for high-quality logistics icons.
+Responsiveness: Ensure all grids and the stepper stack correctly on mobile devices.
+Instruction for Replit: Please generate the code for this new page, ensuring the styling matches the existing website's CSS variables and fonts. Implement the "Learn More" link to point to this new file.
