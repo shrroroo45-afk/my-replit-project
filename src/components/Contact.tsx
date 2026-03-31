@@ -35,7 +35,7 @@ export default function Contact() {
             {[
               { icon: <Phone size={17} />, label: 'هاتف', value: '+962 79 144 0828', href: 'tel:+962791440828' },
               { icon: <MessageCircle size={17} />, label: 'واتساب', value: 'راسلنا مباشرة', href: 'https://wa.me/962791440828', ext: true, green: true },
-              { icon: <Mail size={17} />, label: 'البريد الإلكتروني', value: 'info@avatarexpress.jo', href: 'mailto:info@avatarexpress.jo' },
+              { icon: <Mail size={17} />, label: 'البريد الإلكتروني', value: 'info@avatarexpress.com', href: 'mailto:info@avatarexpress.com' },
             ].map(c => (
               <a key={c.label} href={c.href} target={c.ext ? '_blank' : undefined} rel={c.ext ? 'noopener noreferrer' : undefined}
                 className="flex items-center gap-3.5 rounded-xl border border-gray-100 bg-gray-50 p-4 hover:border-primary/15 transition-all group">
