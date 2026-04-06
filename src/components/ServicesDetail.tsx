@@ -42,7 +42,7 @@ export default function ServicesDetail() {
                     </div>
                   ))}
                 </div>
-                <a href={`https://wa.me/962791440828?text=${encodeURIComponent(s.title)}`} target="_blank" rel="noopener noreferrer"
+                <a href={`https://wa.me/962797540300?text=${encodeURIComponent(s.title)}`} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-[13px] font-bold text-primary hover:text-accent transition-colors w-fit">
                   {t('Request a Quote', 'اطلب عرض سعر')} <Arrow size={14} />
                 </a>

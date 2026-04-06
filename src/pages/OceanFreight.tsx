@@ -32,7 +32,7 @@ export default function OceanFreight() {
     'Hello, I would like to inquire about ocean freight services',
     'مرحبا، أريد الاستفسار عن خدمات الشحن البحري'
   ));
-  const waLink = `https://wa.me/962791440828?text=${waMsg}`;
+  const waLink = `https://wa.me/962797540300?text=${waMsg}`;
 
   const shipTypes = [
     {

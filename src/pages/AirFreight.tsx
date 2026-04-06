@@ -32,7 +32,7 @@ export default function AirFreight() {
     'Hello, I would like to inquire about air freight services',
     'مرحبا، أريد الاستفسار عن خدمات الشحن الجوي'
   ));
-  const waLink = `https://wa.me/962791440828?text=${waMsg}`;
+  const waLink = `https://wa.me/962797540300?text=${waMsg}`;
 
   const steps = [
     {

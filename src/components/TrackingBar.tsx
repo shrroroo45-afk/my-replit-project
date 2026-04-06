@@ -12,7 +12,7 @@ export default function TrackingBar() {
         `Hello, I want to track my shipment: ${trackId}`,
         `مرحبا، أريد تتبع شحنتي: ${trackId}`
       ));
-      window.open(`https://wa.me/962791440828?text=${msg}`, '_blank');
+      window.open(`https://wa.me/962797540300?text=${msg}`, '_blank');
     }
   };
 

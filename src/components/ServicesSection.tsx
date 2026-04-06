@@ -68,7 +68,7 @@ export default function ServicesSection() {
                     </div>
                   ))}
                 </div>
-                <a href={`https://wa.me/962791440828?text=مرحبا، أريد الاستفسار عن خدمة: ${s.title}`} target="_blank" rel="noopener noreferrer"
+                <a href={`https://wa.me/962797540300?text=مرحبا، أريد الاستفسار عن خدمة: ${s.title}`} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-[14px] font-bold text-primary hover:text-primary-dark transition-colors w-fit">
                   اطلب عرض سعر <ArrowRight size={15} />
                 </a>

@@ -116,7 +116,7 @@ export default function CustomPackaging() {
             </div>
 
             <a
-              href={`https://wa.me/962791440828?text=${waMsg}`}
+              href={`https://wa.me/962797540300?text=${waMsg}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/20 active:scale-95"
