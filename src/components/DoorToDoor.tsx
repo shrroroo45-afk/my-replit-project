@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { Home, Calculator, ShieldCheck, BadgeCheck, MessageCircle } from 'lucide-react';
-import { useT } from '../lib/i18n';
+import { useT, useLang } from '../lib/i18n';
 
 export default function DoorToDoor() {
   const t = useT();
+  const lang = useLang(s => s.lang);
 
   const features = [
     {
@@ -49,7 +50,15 @@ export default function DoorToDoor() {
             {t('Added Value Service', 'خدمة ذات قيمة مضافة')}
           </span>
           <h2 className="text-[1.75rem] md:text-[2.2rem] font-extrabold text-primary mt-2 leading-tight">
-            {t('Door to Door', 'توصيل باب لباب')}<br className="hidden sm:block" />
+            {lang === 'ar' ? (
+              <>
+                توصيل من الباب للباب
+                <span className="block text-[1rem] md:text-[1.1rem] font-medium text-accent/80 mt-1 tracking-wide">Door to Door</span>
+              </>
+            ) : (
+              'Door to Door'
+            )}
+            <br className="hidden sm:block" />
             {t('Full Cost Calculation', 'حساب التكلفة الكاملة')}
           </h2>
           <p className="text-gray-500 text-[15px] mt-3 max-w-xl mx-auto leading-relaxed">
@@ -71,8 +80,8 @@ export default function DoorToDoor() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-gray-200/60">
               <img
-                src="/uploads/service-door.jpg"
-                alt={t('Door to Door Delivery', 'توصيل باب لباب')}
+                src="/uploads/door-to-door.jpg"
+                alt={t('Door to Door Delivery', 'توصيل من الباب للباب')}
                 className="w-full h-[320px] md:h-[420px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" />
