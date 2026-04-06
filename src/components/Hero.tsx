@@ -62,7 +62,7 @@ export default function Hero() {
                 className="flex items-center justify-center gap-2 px-7 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/25 active:scale-95">
                 {t('Get a Free Quote', 'احصل على عرض سعر مجاني')} <ArrowRight size={16} />
               </a>
-              <a href="tel:+962797540300"
+              <a href="tel:0797540300"
                 className="flex items-center justify-center gap-2 px-7 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-xl font-bold text-[15px] hover:bg-white/20 transition-all active:scale-95">
                 <Phone size={16} /> {t('Call Now', 'اتصل الآن')}
               </a>

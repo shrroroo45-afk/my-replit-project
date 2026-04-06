@@ -33,7 +33,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           <motion.div initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-2 space-y-3">
             {[
-              { icon: <Phone size={17} />, label: 'هاتف', value: '+962 79 754 0300', href: 'tel:+962797540300' },
+              { icon: <Phone size={17} />, label: 'هاتف', value: '0797540300', href: 'tel:0797540300' },
               { icon: <MessageCircle size={17} />, label: 'واتساب', value: 'راسلنا مباشرة', href: 'https://wa.me/962797540300', ext: true, green: true },
               { icon: <Mail size={17} />, label: 'البريد الإلكتروني', value: 'info@avatarexpress.com', href: 'mailto:info@avatarexpress.com' },
             ].map(c => (

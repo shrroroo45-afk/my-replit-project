@@ -75,7 +75,7 @@ export default function Navbar() {
             className="flex items-center gap-1.5 px-4 py-2 text-[13px] font-semibold text-wa border border-wa/20 rounded-lg hover:bg-green-50 transition-colors">
             <MessageCircle size={14} /> {t('WhatsApp', 'واتساب')}
           </a>
-          <a href="tel:+962797540300"
+          <a href="tel:0797540300"
             className="flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-bold bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
             <Phone size={13} /> {t('Call Now', 'اتصل الآن')}
           </a>
@@ -104,7 +104,7 @@ export default function Navbar() {
             </button>
           ))}
           <div className="flex gap-2 mt-4">
-            <a href="tel:+962797540300" className="flex-1 flex items-center justify-center gap-1.5 py-3 bg-primary text-white rounded-lg font-bold text-sm">
+            <a href="tel:0797540300" className="flex-1 flex items-center justify-center gap-1.5 py-3 bg-primary text-white rounded-lg font-bold text-sm">
               <Phone size={14} /> {t('Call Now', 'اتصل الآن')}
             </a>
             <a href="https://wa.me/962797540300" target="_blank" rel="noopener noreferrer"

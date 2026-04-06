@@ -38,7 +38,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-2 space-y-3">
             {[
-              { icon: <Phone size={17} />, label: t('Phone', 'هاتف'), value: '+962 79 754 0300', href: 'tel:+962797540300', color: 'bg-primary-50 text-accent' },
+              { icon: <Phone size={17} />, label: t('Phone', 'هاتف'), value: '0797540300', href: 'tel:0797540300', color: 'bg-primary-50 text-accent' },
               { icon: <MessageCircle size={17} />, label: t('WhatsApp', 'واتساب'), value: t('Message Us', 'راسلنا'), href: 'https://wa.me/962797540300', ext: true, color: 'bg-green-50 text-wa' },
               { icon: <Mail size={17} />, label: t('Email', 'البريد'), value: 'info@avatarexpress.com', href: 'mailto:info@avatarexpress.com', color: 'bg-primary-50 text-accent' },
             ].map(c => (
