@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import CustomPackaging from './components/CustomPackaging';
+import DoorToDoor from './components/DoorToDoor';
 import WhyUs from './components/WhyUs';
 import HowItWorks from './components/HowItWorks';
 import Stats from './components/Stats';
@@ -45,6 +46,7 @@ function HomePage() {
         <Hero />
         <Services />
         <CustomPackaging />
+        <DoorToDoor />
         <WhyUs />
         <HowItWorks />
         <Stats />

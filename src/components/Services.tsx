@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Plane, Ship, Truck, MapPin, FileCheck, Boxes, Home, ArrowRight, MessageCircle, X, Calculator } from 'lucide-react';
+import { Plane, Ship, Truck, MapPin, FileCheck, Boxes, ArrowRight, MessageCircle, X } from 'lucide-react';
 import { useT } from '../lib/i18n';
 
 function ChoiceModal({ onClose }: { onClose: () => void }) {
@@ -100,29 +100,11 @@ function ChoiceModal({ onClose }: { onClose: () => void }) {
   );
 }
 
-const doorSteps = [
-  { en: 'Factory Price', ar: 'سعر المصنع' },
-  { en: 'Shipping Cost', ar: 'تكلفة الشحن' },
-  { en: 'Customs & Duties', ar: 'الجمارك والرسوم' },
-  { en: 'Last-Mile Delivery', ar: 'التوصيل لبابك' },
-];
-
 export default function Services() {
   const t = useT();
   const [showChoice, setShowChoice] = useState(false);
 
   const services = [
-    {
-      icon: <Home size={26} />,
-      title: t('Door to Door', 'توصيل باب لباب'),
-      desc: t(
-        'Before you spend a single dollar, we give you the complete landed cost — from the factory gate in China to your door in Jordan. No surprises, no hidden fees.',
-        'قبل ما تصرف قرشاً واحداً، نعطيك التكلفة الكاملة للبضاعة — من باب المصنع في الصين وحتى باب بيتك في الأردن. بدون مفاجآت، بدون رسوم مخفية.'
-      ),
-      img: '/uploads/service-door.jpg',
-      tag: t('Full Cost', 'تكلفة كاملة'),
-      isDoor: true,
-    },
     {
       icon: <Plane size={26} />,
       title: t('Air & Sea Freight', 'شحن جوي وبحري'),
@@ -182,41 +164,21 @@ export default function Services() {
         <div className="grid grid-cols-1 gap-5 md:hidden">
           {services.map((s, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
-              className={`rounded-2xl overflow-hidden border bg-white shadow-sm active:shadow-md transition-all ${s.isDoor ? 'border-green-200' : 'border-gray-100'}`}>
+              className="rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm active:shadow-md transition-all">
               <div className="relative h-[200px]">
                 <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
-                <div className={`absolute top-3 end-3 text-white text-[11px] font-bold px-2.5 py-1 rounded-full ${s.isDoor ? 'bg-green-500' : 'bg-accent'}`}>
+                <div className="absolute top-3 end-3 bg-accent text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
                   {s.tag}
                 </div>
                 <div className="absolute bottom-3 start-3 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white">
                   {s.icon}
                 </div>
-                {s.isDoor && (
-                  <div className="absolute top-3 start-3 bg-white/90 backdrop-blur-sm text-green-700 text-[10px] font-black px-2 py-1 rounded-full">
-                    ✦ {t('Most Popular', 'الأكثر طلباً')}
-                  </div>
-                )}
               </div>
-              <div className={`p-5 ${s.isDoor ? 'bg-gradient-to-b from-green-50/50 to-white' : ''}`}>
+              <div className="p-5">
                 <h3 className="text-[16px] font-extrabold text-primary mb-2">{s.title}</h3>
                 <p className="text-[13.5px] text-gray-500 leading-relaxed mb-4">{s.desc}</p>
-                {s.isDoor && (
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {doorSteps.map((step, j) => (
-                      <span key={j} className="flex items-center gap-1 bg-primary/5 text-primary text-[11px] font-bold px-2 py-1 rounded-lg">
-                        <Calculator size={10} /> {t(step.en, step.ar)}
-                      </span>
-                    ))}
-                  </div>
-                )}
-                {s.isDoor ? (
-                  <a href={`https://wa.me/962797540300?text=${encodeURIComponent(t("Hello, I'd like a Door to Door cost calculation from China to my door", 'مرحبا، أريد حساب التكلفة الكاملة door to door من الصين لبابي'))}`}
-                    target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-xl font-bold text-[13px] w-full justify-center transition-colors">
-                    <MessageCircle size={14} /> {t('Get Full Cost Now', 'احسب تكلفتك الآن')}
-                  </a>
-                ) : s.hasChoice ? (
+                {s.hasChoice ? (
                   <button
                     onClick={() => setShowChoice(true)}
                     className="inline-flex items-center gap-2 px-4 py-2.5 bg-accent text-white rounded-xl font-bold text-[13px] w-full justify-center"
@@ -239,48 +201,18 @@ export default function Services() {
         <div className="hidden md:block space-y-8">
           {services.map((s, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border transition-all duration-300 relative
-                ${s.isDoor
-                  ? 'border-green-200 bg-gradient-to-br from-white to-green-50/40 hover:shadow-2xl hover:shadow-green-100/60'
-                  : 'border-gray-100 bg-white hover:shadow-xl hover:shadow-gray-100/80'}`}>
-              {s.isDoor && (
-                <div className="absolute top-5 start-5 z-10">
-                  <span className="bg-green-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-lg">
-                    ✦ {t('Most Popular', 'الأكثر طلباً')}
-                  </span>
-                </div>
-              )}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-gray-100 bg-white hover:shadow-xl hover:shadow-gray-100/80 transition-all duration-300">
               <div className={`h-64 lg:h-auto min-h-[260px] ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
                 <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
               </div>
               <div className={`p-8 md:p-10 flex flex-col justify-center ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${s.isDoor ? 'bg-green-100 text-green-600' : 'bg-primary-50 text-accent'}`}>
-                  {s.icon}
-                </div>
+                <div className="w-14 h-14 rounded-xl bg-primary-50 flex items-center justify-center text-accent mb-5">{s.icon}</div>
                 <div className="mb-3">
-                  <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full ${s.isDoor ? 'bg-green-500/15 text-green-700' : 'bg-accent/10 text-accent'}`}>
-                    {s.tag}
-                  </span>
+                  <span className="bg-accent/10 text-accent text-[11px] font-bold px-2.5 py-1 rounded-full">{s.tag}</span>
                 </div>
                 <h3 className="text-[1.25rem] md:text-[1.4rem] font-extrabold text-primary mb-3">{s.title}</h3>
-                <p className="text-[14.5px] text-gray-500 leading-relaxed mb-5">{s.desc}</p>
-                {s.isDoor && (
-                  <div className="grid grid-cols-2 gap-2 mb-6">
-                    {doorSteps.map((step, j) => (
-                      <div key={j} className="flex items-center gap-2 bg-white border border-green-100 rounded-xl px-3 py-2.5 shadow-sm">
-                        <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-[11px] font-black flex-shrink-0">{j + 1}</div>
-                        <span className="text-[12px] font-semibold text-gray-700">{t(step.en, step.ar)}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                {s.isDoor ? (
-                  <a href={`https://wa.me/962797540300?text=${encodeURIComponent(t("Hello, I'd like a Door to Door cost calculation from China to my door", 'مرحبا، أريد حساب التكلفة الكاملة door to door من الصين لبابي'))}`}
-                    target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-bold text-[14px] transition-colors w-fit shadow-lg shadow-green-200">
-                    <MessageCircle size={16} /> {t('Get Full Cost Now', 'احسب تكلفتك الآن')}
-                  </a>
-                ) : s.hasChoice ? (
+                <p className="text-[14.5px] text-gray-500 leading-relaxed mb-6">{s.desc}</p>
+                {s.hasChoice ? (
                   <button
                     onClick={() => setShowChoice(true)}
                     className="inline-flex items-center gap-1.5 text-[14px] font-bold text-accent hover:text-primary transition-colors w-fit"
