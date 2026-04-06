@@ -54,8 +54,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-[12px] text-white/50">&copy; {new Date().getFullYear()} Avatar Express. {t('All rights reserved.', 'جميع الحقوق محفوظة.')}</p>
-          <p className="text-[12px] text-white/50">{t('International Shipping & Logistics \u2014 Fast, Safe, Professional', 'شحن دولي ولوجستيك \u2014 سريع، آمن، احترافي')}</p>
+          <p className="text-[12px] text-blue-200/30">&copy; {new Date().getFullYear()} Avatar Express. {t('All rights reserved.', 'جميع الحقوق محفوظة.')}</p>
+          <p className="text-[12px] text-blue-200/30">{t('International Shipping & Logistics \u2014 Fast, Safe, Professional', 'شحن دولي ولوجستيك \u2014 سريع، آمن، احترافي')}</p>
         </div>
       </div>
     </footer>
