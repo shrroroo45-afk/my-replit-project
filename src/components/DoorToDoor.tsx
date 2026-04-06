@@ -49,18 +49,16 @@ export default function DoorToDoor() {
           <span className="text-accent text-[12px] font-bold uppercase tracking-[0.2em]">
             {t('Added Value Service', 'خدمة ذات قيمة مضافة')}
           </span>
-          <h2 className="text-[1.75rem] md:text-[2.2rem] font-extrabold text-primary mt-2 leading-tight">
-            {lang === 'ar' ? (
-              <>
-                توصيل من الباب للباب
-                <span className="block text-[1rem] md:text-[1.1rem] font-medium text-accent/80 mt-1 tracking-wide">Door to Door</span>
-              </>
-            ) : (
-              'Door to Door'
+          <div className="flex items-center justify-center gap-3 mt-2 flex-wrap">
+            <h2 className="text-[1.75rem] md:text-[2.2rem] font-extrabold text-primary leading-tight">
+              {t('Door to Door', 'توصيل من الباب للباب')}
+            </h2>
+            {lang === 'ar' && (
+              <span className="text-[13px] font-semibold text-accent/70 border border-accent/30 px-2.5 py-0.5 rounded-full">
+                Door to Door
+              </span>
             )}
-            <br className="hidden sm:block" />
-            {t('Full Cost Calculation', 'حساب التكلفة الكاملة')}
-          </h2>
+          </div>
           <p className="text-gray-500 text-[15px] mt-3 max-w-xl mx-auto leading-relaxed">
             {t(
               'Know the full delivered cost before you purchase anything from China — factory price, shipping, customs, and final delivery, all in one number.',
