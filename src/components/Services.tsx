@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Plane, Ship, Truck, MapPin, FileCheck, Boxes, ArrowRight, MessageCircle, X } from 'lucide-react';
+import { Plane, Ship, Truck, MapPin, FileCheck, Boxes, Home, ArrowRight, MessageCircle, X, Calculator } from 'lucide-react';
 import { useT } from '../lib/i18n';
 
 function ChoiceModal({ onClose }: { onClose: () => void }) {
@@ -100,6 +100,117 @@ function ChoiceModal({ onClose }: { onClose: () => void }) {
   );
 }
 
+const doorToDoorSteps = [
+  { en: 'Factory Price', ar: 'سعر المصنع' },
+  { en: 'Shipping Cost', ar: 'تكلفة الشحن' },
+  { en: 'Customs & Duties', ar: 'الجمارك والرسوم' },
+  { en: 'Last-Mile Delivery', ar: 'التوصيل لبابك' },
+];
+
+function DoorToDoorCard({ mobile }: { mobile?: boolean }) {
+  const t = useT();
+  const waText = encodeURIComponent(t(
+    "Hello, I'd like a Door to Door cost calculation from China to my door",
+    'مرحبا، أريد حساب التكلفة الكاملة door to door من الصين لبابي'
+  ));
+
+  if (mobile) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }} transition={{ duration: 0.4 }}
+        className="rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm active:shadow-md transition-all"
+      >
+        <div className="relative h-[200px]">
+          <img src="/uploads/service-door.jpg" alt={t('Door to Door', 'توصيل باب لباب')} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+          <div className="absolute top-3 end-3 bg-green-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+            {t('Full Cost', 'تكلفة كاملة')}
+          </div>
+          <div className="absolute bottom-3 start-3 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white">
+            <Home size={22} />
+          </div>
+        </div>
+        <div className="p-5">
+          <h3 className="text-[16px] font-extrabold text-primary mb-1">{t('Door to Door', 'توصيل باب لباب')}</h3>
+          <p className="text-[13.5px] text-gray-500 leading-relaxed mb-4">
+            {t(
+              'Know the total cost before you buy — we calculate everything from the factory in China to your door in Jordan.',
+              'اعرف التكلفة الكاملة قبل ما تشتري — نحسب لك كل شيء من باب المصنع في الصين لحتى باب بيتك في الأردن.'
+            )}
+          </p>
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {doorToDoorSteps.map((step, i) => (
+              <span key={i} className="flex items-center gap-1 bg-primary/5 text-primary text-[11px] font-bold px-2 py-1 rounded-lg">
+                <Calculator size={10} /> {t(step.en, step.ar)}
+              </span>
+            ))}
+          </div>
+          <a href={`https://wa.me/962797540300?text=${waText}`}
+            target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-green-600 text-white rounded-xl font-bold text-[13px] w-full justify-center hover:bg-green-700 transition-colors">
+            <MessageCircle size={14} /> {t('Get Full Cost Now', 'احسب تكلفتك الآن')}
+          </a>
+        </div>
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }} transition={{ duration: 0.45 }}
+      className="rounded-2xl overflow-hidden border-2 border-green-100 bg-gradient-to-br from-white to-green-50/40 hover:shadow-2xl hover:shadow-green-100/60 transition-all duration-300 relative"
+    >
+      <div className="absolute top-5 start-5 z-10">
+        <span className="bg-green-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-lg">
+          ✦ {t('Most Popular', 'الأكثر طلباً')}
+        </span>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+        <div className="h-64 lg:h-auto min-h-[300px] lg:order-2 relative overflow-hidden">
+          <img src="/uploads/service-door.jpg" alt={t('Door to Door', 'توصيل باب لباب')} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-green-900/20" />
+        </div>
+        <div className="p-8 md:p-10 flex flex-col justify-center lg:order-1">
+          <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center text-green-600 mb-5">
+            <Home size={26} />
+          </div>
+          <div className="mb-3">
+            <span className="bg-green-500/15 text-green-700 text-[11px] font-bold px-2.5 py-1 rounded-full">
+              {t('Full Cost Calculation', 'حساب التكلفة الكاملة')}
+            </span>
+          </div>
+          <h3 className="text-[1.25rem] md:text-[1.4rem] font-extrabold text-primary mb-2">
+            {t('Door to Door', 'توصيل باب لباب')}
+          </h3>
+          <p className="text-[14.5px] text-gray-500 leading-relaxed mb-5">
+            {t(
+              'Before you spend a single dollar, we give you the complete landed cost — from the factory gate in China all the way to your door in Jordan. No surprises, no hidden fees.',
+              'قبل ما تصرف قرشاً واحداً، نعطيك التكلفة الكاملة للبضاعة — من باب المصنع في الصين وحتى باب بيتك في الأردن. بدون مفاجآت، بدون رسوم مخفية.'
+            )}
+          </p>
+          <div className="grid grid-cols-2 gap-2 mb-6">
+            {doorToDoorSteps.map((step, i) => (
+              <div key={i} className="flex items-center gap-2 bg-white border border-green-100 rounded-xl px-3 py-2.5 shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-[11px] font-black flex-shrink-0">{i + 1}</div>
+                <span className="text-[12px] font-semibold text-gray-700">{t(step.en, step.ar)}</span>
+              </div>
+            ))}
+          </div>
+          <a
+            href={`https://wa.me/962797540300?text=${waText}`}
+            target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-bold text-[14px] transition-colors w-fit shadow-lg shadow-green-200"
+          >
+            <MessageCircle size={16} /> {t('Get Full Cost Now', 'احسب تكلفتك الآن')}
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Services() {
   const t = useT();
   const [showChoice, setShowChoice] = useState(false);
@@ -162,6 +273,7 @@ export default function Services() {
 
         {/* Mobile layout */}
         <div className="grid grid-cols-1 gap-5 md:hidden">
+          <DoorToDoorCard mobile />
           {services.map((s, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
               className="rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm active:shadow-md transition-all">
@@ -199,6 +311,7 @@ export default function Services() {
 
         {/* Desktop layout */}
         <div className="hidden md:block space-y-8">
+          <DoorToDoorCard />
           {services.map((s, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-gray-100 bg-white hover:shadow-xl hover:shadow-gray-100/80 transition-all duration-300">
