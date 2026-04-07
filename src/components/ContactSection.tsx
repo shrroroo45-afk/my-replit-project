@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, Mail, MapPin, Clock, Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, Clock, Send, CheckCircle2, Loader2 } from 'lucide-react';
 import { useT } from '../lib/i18n';
 
 export default function ContactSection() {
@@ -40,7 +40,6 @@ export default function ContactSection() {
             {[
               { icon: <Phone size={17} />, label: t('Phone', 'هاتف'), value: '0797540300', href: 'tel:0797540300', color: 'bg-primary-50 text-accent' },
               { icon: <MessageCircle size={17} />, label: t('WhatsApp', 'واتساب'), value: t('Message Us', 'راسلنا'), href: 'https://wa.me/962797540300', ext: true, color: 'bg-green-50 text-wa' },
-              { icon: <Mail size={17} />, label: t('Email', 'البريد'), value: 'info@avatarexpress.com', href: 'mailto:info@avatarexpress.com', color: 'bg-primary-50 text-accent' },
             ].map(c => (
               <a key={c.label} href={c.href} target={c.ext ? '_blank' : undefined} rel={c.ext ? 'noopener noreferrer' : undefined}
                 className="flex items-center gap-3.5 rounded-xl border border-gray-100 bg-white p-4 hover:border-accent/20 hover:shadow-md hover:shadow-accent/5 transition-all group">

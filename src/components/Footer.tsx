@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, MapPin, MessageCircle } from 'lucide-react';
 import { useT } from '../lib/i18n';
 
 export default function Footer() {
@@ -47,7 +47,6 @@ export default function Footer() {
             <h4 className="text-[13px] font-bold uppercase tracking-wider mb-5 text-accent-light">{t('Contact', 'تواصل')}</h4>
             <div className="flex flex-col gap-3">
               <a href="tel:0797540300" className="flex items-center gap-2 text-[13px] text-white/75 hover:text-white transition-colors"><Phone size={13} /> 0797540300</a>
-              <a href="mailto:info@avatarexpress.com" className="flex items-center gap-2 text-[13px] text-white/75 hover:text-white transition-colors"><Mail size={13} /> info@avatarexpress.com</a>
               <span className="flex items-center gap-2 text-[13px] text-white/75"><MapPin size={13} /> {t('Amman, Jordan', 'عمان، الأردن')}</span>
               <a href="https://wa.me/962797540300" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-wa font-semibold"><MessageCircle size={13} /> {t('WhatsApp', 'واتساب')}</a>
             </div>
