@@ -49,8 +49,7 @@ export default function CustomPackaging() {
             {t('Added Value Service', 'خدمة ذات قيمة مضافة')}
           </span>
           <h2 className="text-[1.75rem] md:text-[2.2rem] font-extrabold text-primary mt-2 leading-tight">
-            {t('Custom Packaging', 'التغليف والتخصيص')}<br className="hidden sm:block" />
-            {t('& Branding', 'حسب الطلب')}
+            {t('Custom Packaging', 'التغليف والتخصيص')}<br className="hidden sm:block" />{' '}{t('& Branding', 'حسب الطلب')}
           </h2>
           <p className="text-gray-500 text-[15px] mt-3 max-w-xl mx-auto leading-relaxed">
             {t(
