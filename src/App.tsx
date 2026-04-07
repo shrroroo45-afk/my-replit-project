@@ -44,9 +44,9 @@ function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <DoorToDoor />
         <Services />
         <CustomPackaging />
-        <DoorToDoor />
         <WhyUs />
         <HowItWorks />
         <Stats />
