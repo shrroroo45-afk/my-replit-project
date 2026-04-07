@@ -32,7 +32,7 @@ export default function Hero() {
               <p className="text-[11px] text-gray-500 font-semibold mt-0.5">{t('Clients Who Trust Us', 'عميل وثقوا بنا')}</p>
             </div>
             <div className="absolute top-4 end-4 bg-accent text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-lg">
-              {t('China → Jordan', 'الصين → الأردن')}
+              {t('China → Jordan', 'الصين ← الأردن')}
             </div>
           </div>
         </motion.div>

@@ -29,7 +29,7 @@ export default function PromoSection() {
                 <img src="/uploads/sea-freight.jpg" alt="" className="w-full h-[160px] md:h-[200px] object-cover" style={{ objectPosition: 'center 60%' }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
                 <div className="absolute bottom-3 start-4 text-white">
-                  <p className="text-[12px] font-bold opacity-80">{t('China → Jordan', 'الصين → الأردن')}</p>
+                  <p className="text-[12px] font-bold opacity-80">{t('China → Jordan', 'الصين ← الأردن')}</p>
                 </div>
               </div>
             </div>
