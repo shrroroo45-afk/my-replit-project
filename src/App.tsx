@@ -19,6 +19,8 @@ import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
 import OceanFreight from './pages/OceanFreight';
 import AirFreight from './pages/AirFreight';
+import PurchaseService from './pages/PurchaseService';
+import StorageService from './pages/StorageService';
 
 function HashScroller() {
   const { hash, pathname } = useLocation();
@@ -71,6 +73,8 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/ocean-freight" element={<OceanFreight />} />
         <Route path="/air-freight" element={<AirFreight />} />
+        <Route path="/purchase-service" element={<PurchaseService />} />
+        <Route path="/storage-service" element={<StorageService />} />
       </Routes>
     </BrowserRouter>
   );

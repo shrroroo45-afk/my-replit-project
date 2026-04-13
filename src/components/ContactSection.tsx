@@ -80,9 +80,10 @@ export default function ContactSection() {
                     <option value="">{t('Select Shipment Type', 'اختر نوع الشحنة')}</option>
                     <option value="Air Freight">{t('Air Freight', 'شحن جوي')}</option>
                     <option value="Sea Freight">{t('Sea Freight', 'شحن بحري')}</option>
-                    <option value="Land Freight">{t('Land Freight', 'شحن بري')}</option>
+                    <option value="Purchase & Storage">{t('Purchase & Storage in China', 'شراء وتخزين في الصين')}</option>
                     <option value="Door to Door">{t('Door to Door', 'توصيل حتى الباب')}</option>
                     <option value="Customs">{t('Customs Clearance', 'تخليص جمركي')}</option>
+                    <option value="Money Transfer">{t('Money Transfer to China', 'حوالة مالية للصين')}</option>
                     <option value="Other">{t('Other / Not Sure', 'أخرى / غير متأكد')}</option>
                   </select>
                   <textarea rows={3} value={form.message} onChange={e => setForm({...form, message: e.target.value})} placeholder={t('Tell us about your shipment (optional)', 'أخبرنا عن شحنتك (اختياري)')} className={`${inp} resize-none`} />

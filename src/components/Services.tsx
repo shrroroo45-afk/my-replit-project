@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Plane, Ship, Truck, MapPin, FileCheck, Boxes, ArrowRight, MessageCircle, X } from 'lucide-react';
+import { Plane, Ship, MapPin, FileCheck, Boxes, ArrowRight, MessageCircle, X, ShoppingCart, Banknote } from 'lucide-react';
 import { useT } from '../lib/i18n';
 
 function ChoiceModal({ onClose }: { onClose: () => void }) {
@@ -100,9 +100,106 @@ function ChoiceModal({ onClose }: { onClose: () => void }) {
   );
 }
 
+function PurchaseStorageModal({ onClose }: { onClose: () => void }) {
+  const t = useT();
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.92, y: 24 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.92, y: 24 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full p-6 md:p-8 relative"
+        onClick={e => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 end-4 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors"
+        >
+          <X size={16} />
+        </button>
+
+        <p className="text-accent text-[11px] font-bold uppercase tracking-widest mb-2 text-center">
+          {t('Choose Service', 'اختر الخدمة')}
+        </p>
+        <h3 className="text-[1.25rem] font-extrabold text-primary text-center mb-7">
+          {t('What are you looking for?', 'ما الخدمة التي تبحث عنها؟')}
+        </h3>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Link
+            to="/purchase-service"
+            onClick={onClose}
+            className="group rounded-2xl overflow-hidden border-2 border-gray-100 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 block"
+          >
+            <div className="relative h-[160px] overflow-hidden">
+              <img
+                src="/uploads/logistics-worker.jpg"
+                alt={t('Purchase from China', 'شراء من الصين')}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
+              <div className="absolute bottom-3 start-3 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white">
+                <ShoppingCart size={20} />
+              </div>
+            </div>
+            <div className="p-5">
+              <h4 className="text-[15px] font-extrabold text-primary mb-1 group-hover:text-accent transition-colors">
+                {t('Purchasing from China', 'شراء بضائع من الصين')}
+              </h4>
+              <p className="text-[13px] text-gray-500 leading-relaxed mb-3">
+                {t('We purchase any goods from Chinese suppliers on your behalf.', 'نشتري لك أي بضاعة من الموردين الصينيين بشكل احترافي.')}
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-[13px] font-bold text-accent">
+                {t('Learn More', 'اعرف المزيد')} <ArrowRight size={13} />
+              </span>
+            </div>
+          </Link>
+
+          <Link
+            to="/storage-service"
+            onClick={onClose}
+            className="group rounded-2xl overflow-hidden border-2 border-gray-100 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 block"
+          >
+            <div className="relative h-[160px] overflow-hidden">
+              <img
+                src="/uploads/warehouse.jpg"
+                alt={t('Storage in China', 'تخزين في الصين')}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
+              <div className="absolute bottom-3 start-3 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white">
+                <Boxes size={20} />
+              </div>
+            </div>
+            <div className="p-5">
+              <h4 className="text-[15px] font-extrabold text-primary mb-1 group-hover:text-accent transition-colors">
+                {t('Warehousing in China', 'تخزين في مستودعاتنا بالصين')}
+              </h4>
+              <p className="text-[13px] text-gray-500 leading-relaxed mb-3">
+                {t('Flexible storage in our secured China warehouses for any duration.', 'تخزين مرن في مستودعاتنا الآمنة بالصين لأي مدة تحتاجها.')}
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-[13px] font-bold text-accent">
+                {t('Learn More', 'اعرف المزيد')} <ArrowRight size={13} />
+              </span>
+            </div>
+          </Link>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function Services() {
   const t = useT();
   const [showChoice, setShowChoice] = useState(false);
+  const [showPurchaseChoice, setShowPurchaseChoice] = useState(false);
 
   const services = [
     {
@@ -114,11 +211,12 @@ export default function Services() {
       hasChoice: true,
     },
     {
-      icon: <Truck size={26} />,
-      title: t('Land Freight', 'شحن بري'),
-      desc: t('Reliable overland transport between cities and countries. Safe handling and on-time delivery for all cargo types.', 'نقل بري موثوق بين المدن والدول. تعامل آمن وتسليم في الوقت المحدد لجميع أنواع البضائع.'),
-      img: '/uploads/land-freight.jpg',
-      tag: t('All Sizes', 'جميع الأحجام'),
+      icon: <ShoppingCart size={26} />,
+      title: t('Purchase & Storage in China', 'شراء بضائع من الصين وتخزينها في مستودعاتنا'),
+      desc: t('We purchase all types of goods from China and store them in our secured warehouses for a flexible duration according to your needs.', 'يمكننا شراء جميع البضائع من الصين وتخزينها في مستودعاتنا لمدة زمنية مرنة وحسب حاجتك وبأمان تام.'),
+      img: '/uploads/logistics-worker.jpg',
+      tag: t('Full Service', 'خدمة متكاملة'),
+      hasPurchaseChoice: true,
     },
     {
       icon: <MapPin size={26} />,
@@ -141,12 +239,22 @@ export default function Services() {
       img: '/uploads/logistics.jpg',
       tag: t('Full Service', 'خدمة كاملة'),
     },
+    {
+      icon: <Banknote size={26} />,
+      title: t('Money Transfers to China', 'حوالات مالية للصين'),
+      desc: t('Fast, safe, and reliable financial transfers to China for paying your suppliers. Competitive exchange rates with full transparency.', 'تحويلات مالية سريعة وآمنة وموثوقة إلى الصين لدفع موردينك. أسعار صرف تنافسية مع شفافية كاملة.'),
+      img: '/uploads/trust.jpg',
+      tag: t('Secure', 'آمن وسريع'),
+    },
   ];
 
   return (
     <section id="services" className="py-16 md:py-28 bg-white">
       <AnimatePresence>
         {showChoice && <ChoiceModal onClose={() => setShowChoice(false)} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {showPurchaseChoice && <PurchaseStorageModal onClose={() => setShowPurchaseChoice(false)} />}
       </AnimatePresence>
 
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
@@ -185,6 +293,13 @@ export default function Services() {
                   >
                     <Plane size={14} /> {t('Learn More', 'اعرف المزيد')}
                   </button>
+                ) : s.hasPurchaseChoice ? (
+                  <button
+                    onClick={() => setShowPurchaseChoice(true)}
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-accent text-white rounded-xl font-bold text-[13px] w-full justify-center"
+                  >
+                    <ShoppingCart size={14} /> {t('Learn More', 'اعرف المزيد')}
+                  </button>
                 ) : (
                   <a href={`https://wa.me/962797540300?text=${encodeURIComponent(t(`Hello, I'm interested in ${s.title}`, `مرحبا، أريد الاستفسار عن ${s.title}`))}`}
                     target="_blank" rel="noopener noreferrer"
@@ -215,6 +330,13 @@ export default function Services() {
                 {s.hasChoice ? (
                   <button
                     onClick={() => setShowChoice(true)}
+                    className="inline-flex items-center gap-1.5 text-[14px] font-bold text-accent hover:text-primary transition-colors w-fit"
+                  >
+                    {t('Learn More', 'اعرف المزيد')} <ArrowRight size={15} />
+                  </button>
+                ) : s.hasPurchaseChoice ? (
+                  <button
+                    onClick={() => setShowPurchaseChoice(true)}
                     className="inline-flex items-center gap-1.5 text-[14px] font-bold text-accent hover:text-primary transition-colors w-fit"
                   >
                     {t('Learn More', 'اعرف المزيد')} <ArrowRight size={15} />
