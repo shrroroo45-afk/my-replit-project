@@ -140,7 +140,7 @@ function PurchaseStorageModal({ onClose }: { onClose: () => void }) {
           >
             <div className="relative h-[160px] overflow-hidden">
               <img
-                src="/uploads/logistics-worker.jpg"
+                src="/uploads/purchase-storage.jpg"
                 alt={t('Purchase from China', 'شراء من الصين')}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -214,7 +214,7 @@ export default function Services() {
       icon: <ShoppingCart size={26} />,
       title: t('Purchase & Storage in China', 'شراء بضائع من الصين وتخزينها في مستودعاتنا'),
       desc: t('We purchase all types of goods from China and store them in our secured warehouses for a flexible duration according to your needs.', 'يمكننا شراء جميع البضائع من الصين وتخزينها في مستودعاتنا لمدة زمنية مرنة وحسب حاجتك وبأمان تام.'),
-      img: '/uploads/logistics-worker.jpg',
+      img: '/uploads/purchase-storage.jpg',
       tag: t('Full Service', 'خدمة متكاملة'),
       hasPurchaseChoice: true,
     },
