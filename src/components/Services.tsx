@@ -140,7 +140,7 @@ function PurchaseStorageModal({ onClose }: { onClose: () => void }) {
           >
             <div className="relative h-[160px] overflow-hidden">
               <img
-                src="/uploads/purchase-storage.jpg"
+                src="/uploads/purchase-china.jpg"
                 alt={t('Purchase from China', 'شراء من الصين')}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -169,7 +169,7 @@ function PurchaseStorageModal({ onClose }: { onClose: () => void }) {
           >
             <div className="relative h-[160px] overflow-hidden">
               <img
-                src="/uploads/warehouse.jpg"
+                src="/uploads/storage-warehouse.jpg"
                 alt={t('Storage in China', 'تخزين في الصين')}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
