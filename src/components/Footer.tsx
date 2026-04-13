@@ -32,12 +32,13 @@ export default function Footer() {
             <h4 className="text-[13px] font-bold uppercase tracking-wider mb-5 text-accent-light">{t('Services', 'الخدمات')}</h4>
             <div className="flex flex-col gap-2.5">
               {[
-                t('Air Freight', 'شحن جوي'),
-                t('Sea Freight', 'شحن بحري'),
-                t('Land Freight', 'شحن بري'),
-                t('Door to Door', 'توصيل من الباب للباب'),
+                t('Weekly Air Freight', 'شحن جوي كل أسبوع'),
+                t('Weekly Sea Freight', 'شحن بحري كل أسبوع'),
+                t('Warehousing in China', 'تخزين بضائع في مستودعاتنا بالصين'),
+                t('Purchasing from China', 'شراء بضائع من الصين'),
                 t('Customs Clearance', 'تخليص جمركي'),
                 t('Logistics Solutions', 'حلول لوجستية'),
+                t('Money Transfers to China', 'حوالات مالية للصين'),
               ].map(s => (
                 <a key={s} href="#services" className="text-[13px] text-white/75 hover:text-white transition-colors">{s}</a>
               ))}
@@ -47,7 +48,7 @@ export default function Footer() {
             <h4 className="text-[13px] font-bold uppercase tracking-wider mb-5 text-accent-light">{t('Contact', 'تواصل')}</h4>
             <div className="flex flex-col gap-3">
               <a href="tel:0797540300" className="flex items-center gap-2 text-[13px] text-white/75 hover:text-white transition-colors"><Phone size={13} /> 0797540300</a>
-              <span className="flex items-center gap-2 text-[13px] text-white/75"><MapPin size={13} /> {t('Amman, Jordan', 'عمان، الأردن')}</span>
+              <span className="flex items-center gap-2 text-[13px] text-white/75"><MapPin size={13} /> {t('Amman, Jordan – Al-Sweifieh', 'عمان، الأردن - الصويفية')}</span>
               <a href="https://wa.me/962797540300" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-wa font-semibold"><MessageCircle size={13} /> {t('WhatsApp', 'واتساب')}</a>
             </div>
           </div>

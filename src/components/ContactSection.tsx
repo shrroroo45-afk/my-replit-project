@@ -52,7 +52,7 @@ export default function ContactSection() {
             ))}
             <div className="flex items-center gap-3.5 rounded-xl border border-gray-100 bg-white p-4">
               <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center text-accent flex-shrink-0"><MapPin size={17} /></div>
-              <div><p className="text-[11px] text-gray-400 uppercase tracking-wider font-medium">{t('Location', 'الموقع')}</p><p className="text-[13.5px] font-bold text-primary">{t('Amman, Jordan', 'عمان، الأردن')}</p></div>
+              <div><p className="text-[11px] text-gray-400 uppercase tracking-wider font-medium">{t('Location', 'الموقع')}</p><p className="text-[13.5px] font-bold text-primary">{t('Amman, Jordan – Al-Sweifieh', 'عمان، الأردن - الصويفية')}</p></div>
             </div>
             <div className="flex items-center gap-3.5 rounded-xl border border-gray-100 bg-white p-4">
               <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center text-accent flex-shrink-0"><Clock size={17} /></div>
