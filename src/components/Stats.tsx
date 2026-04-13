@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import { useT } from '../lib/i18n';
-import { Users, Clock, ShieldCheck, Headphones } from 'lucide-react';
+import { Users, Clock, ShieldCheck, Headphones, Ship } from 'lucide-react';
 
 export default function Stats() {
   const t = useT();
   const stats = [
     { num: '+200', label: t('Clients Who Trust Us', 'عميل وثقوا بنا'), icon: <Users size={20} /> },
     { num: '7-12', label: t('Days — Air Delivery', 'يوم — توصيل جوي سريع'), icon: <Clock size={20} /> },
+    { num: '24-28', label: t('Days — Sea Delivery', 'يوم — توصيل بحري'), icon: <Ship size={20} /> },
     { num: '24/7', label: t('Round-the-Clock Support', 'دعم متواصل على مدار الساعة'), icon: <Headphones size={20} /> },
     { num: '100%', label: t('Full Customs Clearance', 'تخليص جمركي شامل'), icon: <ShieldCheck size={20} /> },
   ];
@@ -16,7 +17,7 @@ export default function Stats() {
         <img src="/uploads/hero-bg.jpg" alt="" className="w-full h-full object-cover" />
       </div>
       <div className="max-w-7xl mx-auto px-5 lg:px-8 relative">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
           {stats.map((s, i) => (
             <motion.div
               key={i}
