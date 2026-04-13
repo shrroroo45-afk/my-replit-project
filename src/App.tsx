@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -24,7 +24,17 @@ import StorageService from './pages/StorageService';
 
 function HashScroller() {
   const { hash, pathname } = useLocation();
+  const isInitialMount = useRef(true);
+
   useEffect(() => {
+    // On the very first render, always scroll to top regardless of any hash in URL
+    // This prevents the page from jumping to a section when re-entering the site
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      return;
+    }
+
     if (hash) {
       const id = hash.replace('#', '');
       const timer = setTimeout(() => {

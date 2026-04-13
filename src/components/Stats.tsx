@@ -14,7 +14,7 @@ export default function Stats() {
   return (
     <section className="py-14 md:py-20 bg-primary relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
-        <img src="/uploads/hero-bg.jpg" alt="" className="w-full h-full object-cover" />
+        <img src="/uploads/hero-bg.jpg" alt="" loading="lazy" className="w-full h-full object-cover" />
       </div>
       <div className="max-w-7xl mx-auto px-5 lg:px-8 relative">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">

@@ -18,15 +18,15 @@ export default function PromoSection() {
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="grid grid-cols-2 gap-3">
               <div className="relative rounded-xl overflow-hidden">
-                <img src="/uploads/customer-happy.jpg" alt="" className="w-full h-[160px] md:h-[200px] object-cover" />
+                <img src="/uploads/customer-happy.jpg" alt="" loading="lazy" className="w-full h-[160px] md:h-[200px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
               </div>
               <div className="relative rounded-xl overflow-hidden">
-                <img src="/uploads/logistics.jpg" alt="" className="w-full h-[160px] md:h-[200px] object-cover" />
+                <img src="/uploads/logistics.jpg" alt="" loading="lazy" className="w-full h-[160px] md:h-[200px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
               </div>
               <div className="relative rounded-xl overflow-hidden col-span-2">
-                <img src="/uploads/sea-freight.jpg" alt="" className="w-full h-[160px] md:h-[200px] object-cover" style={{ objectPosition: 'center 60%' }} />
+                <img src="/uploads/sea-freight.jpg" alt="" loading="lazy" className="w-full h-[160px] md:h-[200px] object-cover" style={{ objectPosition: 'center 60%' }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
                 <div className="absolute bottom-3 start-4 text-white">
                   <p className="text-[12px] font-bold opacity-80">{t('China → Jordan', 'الصين ← الأردن')}</p>

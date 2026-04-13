@@ -271,10 +271,10 @@ export default function Services() {
         {/* Mobile layout */}
         <div className="grid grid-cols-1 gap-5 md:hidden">
           {services.map((s, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
+            <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.3, delay: i * 0.04 }}
               className="rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm active:shadow-md transition-all">
               <div className="relative h-[200px]">
-                <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
+                <img src={s.img} alt={s.title} loading="lazy" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
                 <div className="absolute top-3 end-3 bg-accent text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
                   {s.tag}
@@ -315,10 +315,10 @@ export default function Services() {
         {/* Desktop layout */}
         <div className="hidden md:block space-y-8">
           {services.map((s, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-gray-100 bg-white hover:shadow-xl hover:shadow-gray-100/80 transition-all duration-300">
+            <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-gray-100 bg-white hover:shadow-xl hover:shadow-gray-100/80 transition-shadow duration-200">
               <div className={`h-64 lg:h-auto min-h-[260px] ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
+                <img src={s.img} alt={s.title} loading="lazy" className="w-full h-full object-cover" />
               </div>
               <div className={`p-8 md:p-10 flex flex-col justify-center ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
                 <div className="w-14 h-14 rounded-xl bg-primary-50 flex items-center justify-center text-accent mb-5">{s.icon}</div>

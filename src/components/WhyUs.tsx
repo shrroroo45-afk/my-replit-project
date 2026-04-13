@@ -26,7 +26,7 @@ export default function WhyUs() {
 
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="md:hidden mb-6">
           <div className="relative rounded-2xl overflow-hidden shadow-lg">
-            <img src="/uploads/trust.jpg" alt="" className="w-full h-[220px] object-cover" style={{ objectPosition: 'center 30%' }} />
+            <img src="/uploads/trust.jpg" alt="" loading="lazy" className="w-full h-[220px] object-cover" style={{ objectPosition: 'center 30%' }} />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" />
             <div className="absolute bottom-4 end-4 bg-primary text-white rounded-xl px-5 py-3 shadow-xl">
               <p className="text-[26px] font-extrabold leading-none">99%</p>
@@ -49,7 +49,7 @@ export default function WhyUs() {
         <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <div className="relative">
-              <img src="/uploads/trust.jpg" alt="" className="w-full h-[360px] md:h-[420px] object-cover rounded-2xl shadow-lg" />
+              <img src="/uploads/trust.jpg" alt="" loading="lazy" className="w-full h-[360px] md:h-[420px] object-cover rounded-2xl shadow-lg" />
               <div className="absolute -bottom-4 -end-4 bg-primary text-white rounded-xl px-6 py-4 shadow-xl">
                 <p className="text-[28px] font-extrabold">99%</p>
                 <p className="text-[12px] text-blue-200">{t('Customer Satisfaction', 'رضا العملاء')}</p>

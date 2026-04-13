@@ -9,7 +9,7 @@ export default function FinalCTA() {
       <div className="max-w-4xl mx-auto px-5 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="bg-gradient-to-br from-primary via-primary-dark to-navy rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10"><img src="/uploads/hero-bg.jpg" alt="" className="w-full h-full object-cover" /></div>
+          <div className="absolute inset-0 opacity-10"><img src="/uploads/hero-bg.jpg" alt="" loading="lazy" className="w-full h-full object-cover" /></div>
           <div className="relative">
             <h2 className="text-[1.75rem] md:text-[2.3rem] font-extrabold text-white leading-tight mb-4">{t('Ready to Ship Your Order?', 'جاهز لشحن طلبك؟')}</h2>
             <p className="text-blue-200/80 text-[15px] mb-9 max-w-md mx-auto">{t('Get a free shipping quote in minutes. Our logistics experts are ready to help.', 'احصل على عرض سعر مجاني خلال دقائق. خبراؤنا جاهزون لمساعدتك.')}</p>
