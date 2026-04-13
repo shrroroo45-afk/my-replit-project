@@ -243,7 +243,7 @@ export default function Services() {
       icon: <Banknote size={26} />,
       title: t('Money Transfers to China', 'حوالات مالية للصين'),
       desc: t('Fast, safe, and reliable financial transfers to China for paying your suppliers. Competitive exchange rates with full transparency.', 'تحويلات مالية سريعة وآمنة وموثوقة إلى الصين لدفع موردينك. أسعار صرف تنافسية مع شفافية كاملة.'),
-      img: '/uploads/trust.jpg',
+      img: '/uploads/money-transfer.jpg',
       tag: t('Secure', 'آمن وسريع'),
     },
   ];
