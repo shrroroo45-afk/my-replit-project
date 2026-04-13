@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import {
   Warehouse, PackageCheck, ShieldCheck, Clock,
-  Truck, ChevronRight, MessageCircle,
+  Truck, ChevronRight, MessageCircle, ArrowRight,
   Thermometer, BarChart3, Lock,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
@@ -21,6 +21,7 @@ const tr = { duration: 0.55, ease: 'easeOut' as const };
 export default function StorageService() {
   const t = useT();
   const { lang } = useLang();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -74,8 +75,23 @@ export default function StorageService() {
     <div dir={dir} className="min-h-screen bg-white">
       <Navbar />
 
+      {/* Sticky breadcrumb — same as air/ocean freight pages */}
+      <div className="sticky top-[64px] z-40 bg-white border-b border-gray-100 shadow-sm">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 h-12 flex items-center">
+          <button
+            onClick={() => navigate(-1)}
+            className="inline-flex items-center gap-2 text-[13px] font-bold text-primary hover:text-accent transition-colors"
+          >
+            <ArrowRight size={15} />
+            {t('Go Back', 'رجوع')}
+          </button>
+          <span className="mx-3 text-gray-200">|</span>
+          <span className="text-[13px] text-gray-400">{t('Warehousing in China', 'تخزين في مستودعاتنا بالصين')}</span>
+        </div>
+      </div>
+
       {/* Hero */}
-      <section className="relative bg-primary pt-28 pb-20 overflow-hidden">
+      <section className="relative bg-primary pt-20 pb-20 overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <img src="/uploads/storage-warehouse.jpg" alt="" className="w-full h-full object-cover" />
         </div>
@@ -94,16 +110,10 @@ export default function StorageService() {
                 'خزّن بضاعتك في مستودعاتنا الآمنة بالصين لأي مدة تحتاجها — مراقبة بالكامل، مؤمنة، وجاهزة للشحن متى قررت.'
               )}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={waLink} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/30 active:scale-95">
-                <MessageCircle size={18} /> {t('Reserve Storage Now', 'احجز مساحة تخزين')}
-              </a>
-              <Link to="/"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white/10 border border-white/20 text-white rounded-xl font-bold text-[15px] hover:bg-white/20 transition-all active:scale-95">
-                {t('Back to Home', 'العودة للرئيسية')}
-              </Link>
-            </div>
+            <a href={waLink} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/30 active:scale-95">
+              <MessageCircle size={18} /> {t('Reserve Storage Now', 'احجز مساحة تخزين')}
+            </a>
           </motion.div>
         </div>
       </section>
@@ -183,10 +193,11 @@ export default function StorageService() {
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/30 active:scale-95">
                 <MessageCircle size={18} /> {t('Contact Us on WhatsApp', 'تواصل معنا عبر الواتساب')}
               </a>
-              <Link to="/#services"
+              <button
+                onClick={() => navigate(-1)}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white rounded-xl font-bold text-[15px] hover:bg-white/20 transition-all active:scale-95">
-                {t('View All Services', 'عرض جميع الخدمات')} <ChevronRight size={16} />
-              </Link>
+                <ChevronRight size={16} /> {t('Back', 'رجوع')}
+              </button>
             </div>
           </motion.div>
         </div>

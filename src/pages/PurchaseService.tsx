@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import {
   ShoppingCart, Search, ClipboardCheck, PackageCheck,
   Truck, MessageCircle,
-  CheckCircle, ChevronRight,
+  CheckCircle, ChevronRight, ArrowRight,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -21,6 +21,7 @@ const tr = { duration: 0.55, ease: 'easeOut' as const };
 export default function PurchaseService() {
   const t = useT();
   const { lang } = useLang();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,32 +38,32 @@ export default function PurchaseService() {
   const steps = [
     {
       num: 1,
-      title: t('Send Us What You Need', 'أخبرنا بما تريد'),
+      title: t('Tell Us What You Need', 'أخبرنا بما تريد'),
       desc: t('Send us the product details, specifications, and quantity you need.', 'أرسل لنا تفاصيل المنتج والمواصفات والكمية التي تحتاجها.'),
       icon: <ClipboardCheck size={20} />,
     },
     {
       num: 2,
-      title: t('Supplier Search & Verification', 'البحث عن المورد والتحقق منه'),
-      desc: t('We find the best suppliers in China, verify their quality and reliability.', 'نبحث عن أفضل الموردين في الصين، ونتحقق من جودتهم وموثوقيتهم.'),
+      title: t('Supplier Search & Verification', 'البحث عن المورد والتحقق'),
+      desc: t('We find the best suppliers in China and verify their quality and reliability.', 'نبحث عن أفضل الموردين في الصين ونتحقق من جودتهم وموثوقيتهم.'),
       icon: <Search size={20} />,
     },
     {
       num: 3,
-      title: t('Price Negotiation & Purchase', 'التفاوض على السعر والشراء'),
-      desc: t('We negotiate the best price on your behalf and finalize the purchase.', 'نتفاوض للحصول على أفضل سعر نيابة عنك وننهي عملية الشراء.'),
+      title: t('Negotiation & Purchase', 'التفاوض والشراء'),
+      desc: t('We negotiate the best price on your behalf and complete the purchase.', 'نتفاوض للحصول على أفضل سعر نيابة عنك وننهي عملية الشراء.'),
       icon: <ShoppingCart size={20} />,
     },
     {
       num: 4,
       title: t('Quality Inspection', 'فحص الجودة'),
-      desc: t('We inspect the goods in our China warehouse before shipping to ensure quality.', 'نفحص البضاعة في مستودعنا بالصين قبل الشحن للتأكد من الجودة.'),
+      desc: t('We inspect the goods in our China warehouse before shipping.', 'نفحص البضاعة في مستودعنا بالصين قبل الشحن للتأكد من الجودة.'),
       icon: <PackageCheck size={20} />,
     },
     {
       num: 5,
       title: t('Shipping & Delivery', 'الشحن والتوصيل'),
-      desc: t('Your goods are shipped to Jordan with full customs clearance and door delivery.', 'يتم شحن بضاعتك إلى الأردن مع تخليص جمركي كامل وتوصيل للباب.'),
+      desc: t('Goods shipped to Jordan with full customs clearance and door delivery.', 'يتم شحن بضاعتك إلى الأردن مع تخليص جمركي كامل وتوصيل للباب.'),
       icon: <Truck size={20} />,
     },
   ];
@@ -80,10 +81,25 @@ export default function PurchaseService() {
     <div dir={dir} className="min-h-screen bg-white">
       <Navbar />
 
+      {/* Sticky breadcrumb — same as air/ocean freight pages */}
+      <div className="sticky top-[64px] z-40 bg-white border-b border-gray-100 shadow-sm">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 h-12 flex items-center">
+          <button
+            onClick={() => navigate(-1)}
+            className="inline-flex items-center gap-2 text-[13px] font-bold text-primary hover:text-accent transition-colors"
+          >
+            <ArrowRight size={15} />
+            {t('Go Back', 'رجوع')}
+          </button>
+          <span className="mx-3 text-gray-200">|</span>
+          <span className="text-[13px] text-gray-400">{t('Purchasing from China', 'شراء بضائع من الصين')}</span>
+        </div>
+      </div>
+
       {/* Hero */}
-      <section className="relative bg-primary pt-28 pb-20 overflow-hidden">
+      <section className="relative bg-primary pt-20 pb-20 overflow-hidden">
         <div className="absolute inset-0 opacity-15">
-          <img src="/uploads/purchase-storage.jpg" alt="" className="w-full h-full object-cover" />
+          <img src="/uploads/purchase-china.jpg" alt="" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-primary/95" />
         <div className="max-w-5xl mx-auto px-5 lg:px-8 relative text-center">
@@ -100,16 +116,10 @@ export default function PurchaseService() {
                 'نشتري لك أي منتج من المصانع الصينية — مع فحص الجودة والتفاوض الاحترافي والتوصيل الكامل إلى الأردن.'
               )}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={waLink} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/30 active:scale-95">
-                <MessageCircle size={18} /> {t('Start Now via WhatsApp', 'ابدأ الآن عبر الواتساب')}
-              </a>
-              <Link to="/"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white/10 border border-white/20 text-white rounded-xl font-bold text-[15px] hover:bg-white/20 transition-all active:scale-95">
-                {t('Back to Home', 'العودة للرئيسية')}
-              </Link>
-            </div>
+            <a href={waLink} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/30 active:scale-95">
+              <MessageCircle size={18} /> {t('Start Now via WhatsApp', 'ابدأ الآن عبر الواتساب')}
+            </a>
           </motion.div>
         </div>
       </section>
@@ -119,7 +129,7 @@ export default function PurchaseService() {
         <div className="max-w-5xl mx-auto px-5 lg:px-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={tr} className="text-center mb-12">
             <span className="text-accent text-[12px] font-bold uppercase tracking-[0.2em]">{t('How It Works', 'كيف تعمل الخدمة')}</span>
-            <h2 className="text-[1.6rem] md:text-[2rem] font-extrabold text-primary mt-2">{t('Purchase Steps', 'خطوات عملية الشراء')}</h2>
+            <h2 className="text-[1.6rem] md:text-[2rem] font-extrabold text-primary mt-2">{t('Purchase Process Steps', 'خطوات عملية الشراء')}</h2>
           </motion.div>
 
           <div className="relative">
@@ -147,7 +157,7 @@ export default function PurchaseService() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={tr}>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
-                <img src="/uploads/purchase-storage.jpg" alt={t('Purchasing from China', 'شراء من الصين')} className="w-full h-[380px] object-cover" />
+                <img src="/uploads/purchase-china.jpg" alt={t('Purchasing from China', 'شراء من الصين')} className="w-full h-[380px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent" />
                 <div className="absolute bottom-6 start-6 bg-white rounded-xl px-5 py-3 shadow-lg">
                   <p className="text-primary font-extrabold text-[15px]">{t('Trusted Sourcing', 'مصادر موثوقة')}</p>
@@ -192,10 +202,11 @@ export default function PurchaseService() {
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-bold text-[15px] hover:bg-accent-light transition-all shadow-lg shadow-accent/30 active:scale-95">
                 <MessageCircle size={18} /> {t('Contact Us on WhatsApp', 'تواصل معنا عبر الواتساب')}
               </a>
-              <Link to="/#services"
+              <button
+                onClick={() => navigate(-1)}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white rounded-xl font-bold text-[15px] hover:bg-white/20 transition-all active:scale-95">
-                {t('View All Services', 'عرض جميع الخدمات')} <ChevronRight size={16} />
-              </Link>
+                <ChevronRight size={16} /> {t('Back', 'رجوع')}
+              </button>
             </div>
           </motion.div>
         </div>
