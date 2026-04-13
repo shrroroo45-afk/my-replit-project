@@ -56,7 +56,7 @@ export default function ContactSection() {
             </div>
             <div className="flex items-center gap-3.5 rounded-xl border border-gray-100 bg-white p-4">
               <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center text-accent flex-shrink-0"><Clock size={17} /></div>
-              <div><p className="text-[11px] text-gray-400 uppercase tracking-wider font-medium">{t('Hours', 'الساعات')}</p><p className="text-[13.5px] font-bold text-primary">{t('Sun \u2013 Thu, 9 AM \u2013 6 PM', 'الأحد - الخميس, 9 ص - 6 م')}</p></div>
+              <div><p className="text-[11px] text-gray-400 uppercase tracking-wider font-medium">{t('Hours', 'الساعات')}</p><p className="text-[13.5px] font-bold text-primary">{t('Sat \u2013 Thu, 7 AM \u2013 10 PM', 'السبت - الخميس, 7 ص - 10 م')}</p></div>
             </div>
           </motion.div>
 
