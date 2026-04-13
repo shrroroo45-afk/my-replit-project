@@ -80,6 +80,7 @@ export default function DoorToDoor() {
               <img
                 src="/uploads/door-to-door.jpg"
                 alt={t('Door to Door Delivery', 'توصيل من الباب للباب')}
+                loading="lazy"
                 className="w-full h-[320px] md:h-[420px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" />

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -17,18 +17,17 @@ import Footer from './components/Footer';
 import MobileSticky from './components/MobileSticky';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
-import OceanFreight from './pages/OceanFreight';
-import AirFreight from './pages/AirFreight';
-import PurchaseService from './pages/PurchaseService';
-import StorageService from './pages/StorageService';
+
+const OceanFreight = lazy(() => import('./pages/OceanFreight'));
+const AirFreight = lazy(() => import('./pages/AirFreight'));
+const PurchaseService = lazy(() => import('./pages/PurchaseService'));
+const StorageService = lazy(() => import('./pages/StorageService'));
 
 function HashScroller() {
   const { hash, pathname } = useLocation();
   const isInitialMount = useRef(true);
 
   useEffect(() => {
-    // On the very first render, always scroll to top regardless of any hash in URL
-    // This prevents the page from jumping to a section when re-entering the site
     if (isInitialMount.current) {
       isInitialMount.current = false;
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -79,13 +78,15 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/ocean-freight" element={<OceanFreight />} />
-        <Route path="/air-freight" element={<AirFreight />} />
-        <Route path="/purchase-service" element={<PurchaseService />} />
-        <Route path="/storage-service" element={<StorageService />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/ocean-freight" element={<OceanFreight />} />
+          <Route path="/air-freight" element={<AirFreight />} />
+          <Route path="/purchase-service" element={<PurchaseService />} />
+          <Route path="/storage-service" element={<StorageService />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

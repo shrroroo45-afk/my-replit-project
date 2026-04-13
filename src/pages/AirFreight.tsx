@@ -111,6 +111,7 @@ export default function AirFreight() {
         <img
           src="/uploads/air-freight.jpg"
           alt={t('Air Freight', 'الشحن الجوي')}
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-navy/90" />

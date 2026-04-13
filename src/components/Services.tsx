@@ -46,6 +46,7 @@ function ChoiceModal({ onClose }: { onClose: () => void }) {
                 <img
                   src="/uploads/svc-air.jpg"
                   alt={t('Air Freight', 'الشحن الجوي')}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
@@ -75,6 +76,7 @@ function ChoiceModal({ onClose }: { onClose: () => void }) {
                 <img
                   src="/uploads/svc-sea.jpg"
                   alt={t('Ocean Freight', 'الشحن البحري')}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
@@ -142,6 +144,7 @@ function PurchaseStorageModal({ onClose }: { onClose: () => void }) {
               <img
                 src="/uploads/purchase-china.jpg"
                 alt={t('Purchase from China', 'شراء من الصين')}
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
@@ -171,6 +174,7 @@ function PurchaseStorageModal({ onClose }: { onClose: () => void }) {
               <img
                 src="/uploads/storage-warehouse.jpg"
                 alt={t('Storage in China', 'تخزين في الصين')}
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />

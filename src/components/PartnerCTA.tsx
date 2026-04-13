@@ -8,7 +8,7 @@ export default function PartnerCTA() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <motion.div initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <div className="rounded-2xl overflow-hidden border border-gray-100">
-              <img src="/uploads/happy-customer.jpg" alt="Partner" className="w-full h-[260px] md:h-[320px] object-cover" />
+              <img src="/uploads/happy-customer.jpg" alt="Partner" loading="lazy" className="w-full h-[260px] md:h-[320px] object-cover" />
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>

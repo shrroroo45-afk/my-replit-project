@@ -93,7 +93,7 @@ export default function StorageService() {
       {/* Hero */}
       <section className="relative bg-primary pt-20 pb-20 overflow-hidden">
         <div className="absolute inset-0 opacity-15">
-          <img src="/uploads/storage-warehouse.jpg" alt="" className="w-full h-full object-cover" />
+          <img src="/uploads/storage-warehouse.jpg" alt="" loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-primary/95" />
         <div className="max-w-5xl mx-auto px-5 lg:px-8 relative text-center">
@@ -148,7 +148,7 @@ export default function StorageService() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={tr}>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
-                <img src="/uploads/storage-warehouse.jpg" alt={t('Warehouse in China', 'مستودع في الصين')} className="w-full h-[380px] object-cover" />
+                <img src="/uploads/storage-warehouse.jpg" alt={t('Warehouse in China', 'مستودع في الصين')} loading="lazy" className="w-full h-[380px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent" />
                 <div className="absolute bottom-6 start-6 bg-white rounded-xl px-5 py-3 shadow-lg">
                   <p className="text-primary font-extrabold text-[15px]">{t('Secure & Monitored', 'آمن ومراقب')}</p>

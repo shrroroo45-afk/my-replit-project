@@ -24,7 +24,7 @@ export default function AboutBanner() {
               </a>
             </div>
             <div className="h-[250px] lg:h-auto">
-              <img src="/uploads/about-img.jpg" alt="About Avatar Express" className="w-full h-full object-cover" />
+              <img src="/uploads/about-img.jpg" alt="About Avatar Express" loading="lazy" className="w-full h-full object-cover" />
             </div>
           </div>
         </motion.div>

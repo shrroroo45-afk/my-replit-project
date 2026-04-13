@@ -71,6 +71,7 @@ export default function CustomPackaging() {
               <img
                 src="/uploads/packaging.jpg"
                 alt={t('Custom Packaging & Branding', 'التغليف والتخصيص')}
+                loading="lazy"
                 className="w-full h-[320px] md:h-[420px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" />

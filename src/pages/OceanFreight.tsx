@@ -118,6 +118,7 @@ export default function OceanFreight() {
         <img
           src="/uploads/sea-freight.jpg"
           alt={t('Ocean Freight', 'الشحن البحري')}
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-navy/90" />

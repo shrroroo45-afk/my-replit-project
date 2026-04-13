@@ -26,7 +26,7 @@ export default function ServicesDetail() {
             <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
               className="grid grid-cols-1 lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:shadow-gray-100/80 transition-all duration-300">
               <div className={`lg:col-span-2 h-52 lg:h-auto ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
+                <img src={s.img} alt={s.title} loading="lazy" className="w-full h-full object-cover" />
               </div>
               <div className={`lg:col-span-3 p-7 md:p-9 flex flex-col justify-center bg-white ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
                 <div className="flex items-center gap-3 mb-3">
