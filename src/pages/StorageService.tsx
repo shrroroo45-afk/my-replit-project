@@ -40,33 +40,6 @@ export default function StorageService() {
   ));
   const waLink = `https://wa.me/962797540300?text=${waMsg}`;
 
-  const steps = [
-    {
-      num: 1,
-      title: t('Goods Arrival', 'وصول البضاعة'),
-      desc: t('Your goods arrive at our China warehouse from any supplier or factory.', 'تصل بضاعتك إلى مستودعنا بالصين من أي مورد أو مصنع.'),
-      icon: <PackageCheck size={20} />,
-    },
-    {
-      num: 2,
-      title: t('Receiving & Inspection', 'الاستلام والفحص'),
-      desc: t('We receive and inspect each item, documenting quantity and condition.', 'نستلم ونفحص كل صنف ونوثق الكمية والحالة بدقة.'),
-      icon: <ShieldCheck size={20} />,
-    },
-    {
-      num: 3,
-      title: t('Secure Storage', 'التخزين الآمن'),
-      desc: t('Your goods are stored safely in our monitored, organized warehouse.', 'تُخزَّن بضاعتك بأمان في مستودعنا المنظم والمراقب على مدار الساعة.'),
-      icon: <Warehouse size={20} />,
-    },
-    {
-      num: 4,
-      title: t('Flexible Dispatch', 'الشحن عند الطلب'),
-      desc: t('Tell us when you are ready and we ship directly to Jordan with full clearance.', 'أخبرنا عندما تكون جاهزاً ونشحن مباشرة إلى الأردن مع تخليص جمركي كامل.'),
-      icon: <Truck size={20} />,
-    },
-  ];
-
   const features = [
     { icon: <Clock size={16} />, title: t('Flexible Duration', 'مدة مرنة'), desc: t('Store for days, weeks, or months — as long as you need.', 'تخزين لأيام أو أسابيع أو أشهر حسب حاجتك.') },
     { icon: <Lock size={16} />, title: t('Fully Secured', 'أمان تام'), desc: t('24/7 monitored warehouse with full insurance coverage.', 'مستودع مراقب 24/7 مع تغطية تأمينية كاملة.') },
