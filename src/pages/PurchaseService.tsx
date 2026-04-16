@@ -4,12 +4,11 @@ import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import {
   ShoppingCart, ClipboardCheck, Package, ShieldCheck, MessageCircle,
-  ArrowRight, CheckCircle, Truck, BadgeCheck,
+  ArrowRight, CheckCircle, Truck, BadgeCheck, ChevronRight,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useT, useLang } from '../lib/i18n';
-import purchaseChinaImage from '@assets/targeted_element_1776352943592.png';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -62,7 +61,7 @@ export default function PurchaseService() {
 
       <section className="relative bg-primary pt-20 pb-20 overflow-hidden">
         <div className="absolute inset-0 opacity-15">
-          <img src={purchaseChinaImage} alt="" loading="eager" className="w-full h-full object-cover" />
+          <img src="/uploads/purchase-china.jpg" alt="" loading="eager" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-primary/95" />
         <div className="max-w-5xl mx-auto px-5 lg:px-8 relative text-center">
@@ -83,7 +82,7 @@ export default function PurchaseService() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={tr}>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
-                <img src={purchaseChinaImage} alt={t('Purchasing from China', 'شراء من الصين')} loading="lazy" className="w-full h-[380px] object-cover" />
+                <img src="/uploads/purchase-china.jpg" alt={t('Purchasing from China', 'شراء من الصين')} loading="lazy" className="w-full h-[380px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent" />
                 <div className="absolute bottom-6 start-6 bg-white rounded-xl px-5 py-3 shadow-lg">
                   <p className="text-primary font-extrabold text-[15px]">{t('Trusted Sourcing', 'توريد موثوق')}</p>
