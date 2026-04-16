@@ -10,7 +10,8 @@ import {
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useT, useLang } from '../lib/i18n';
-import storageWarehouseImage from '@assets/5109535855923104914_(1)_1776352938151.jpg';
+
+const storageWarehouseImage = '/uploads/storage-warehouse.jpg';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
