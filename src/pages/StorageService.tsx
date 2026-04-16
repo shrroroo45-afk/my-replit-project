@@ -3,8 +3,8 @@ import { useNavigate, useNavigationType } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import {
-  Warehouse, PackageCheck, ShieldCheck, Clock,
-  Truck, ChevronRight, MessageCircle, ArrowRight,
+  PackageCheck, ShieldCheck, Clock,
+  ChevronRight, MessageCircle, ArrowRight,
   Thermometer, BarChart3, Lock,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
