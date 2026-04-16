@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useNavigationType } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import {
@@ -24,10 +24,13 @@ export default function StorageService() {
   const t = useT();
   const { lang } = useLang();
   const navigate = useNavigate();
+  const navType = useNavigationType();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (navType !== 'POP') {
+      window.scrollTo(0, 0);
+    }
+  }, [navType]);
 
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
 

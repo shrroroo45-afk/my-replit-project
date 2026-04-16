@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { useEffect, useRef, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -25,12 +25,19 @@ const StorageService = lazy(() => import('./pages/StorageService'));
 
 function HashScroller() {
   const { hash, pathname } = useLocation();
+  const navType = useNavigationType();
   const isInitialMount = useRef(true);
 
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      if (navType !== 'POP' && !hash) {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }
+      return;
+    }
+
+    if (navType === 'POP') {
       return;
     }
 
@@ -44,7 +51,7 @@ function HashScroller() {
     } else {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
-  }, [hash, pathname]);
+  }, [hash, pathname, navType]);
   return null;
 }
 

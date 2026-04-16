@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigationType } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import {
@@ -21,10 +21,13 @@ const tr = { duration: 0.55, ease: 'easeOut' as const };
 export default function OceanFreight() {
   const t = useT();
   const { lang } = useLang();
+  const navType = useNavigationType();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (navType !== 'POP') {
+      window.scrollTo(0, 0);
+    }
+  }, [navType]);
 
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
 

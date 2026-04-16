@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useNavigationType } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import {
-  ShoppingCart, ClipboardCheck, Package, ShieldCheck, MessageCircle,
+  ClipboardCheck, Package, ShieldCheck, MessageCircle,
   ArrowRight, CheckCircle, Truck, BadgeCheck, ChevronRight,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
@@ -21,10 +21,13 @@ export default function PurchaseService() {
   const t = useT();
   const { lang } = useLang();
   const navigate = useNavigate();
+  const navType = useNavigationType();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (navType !== 'POP') {
+      window.scrollTo(0, 0);
+    }
+  }, [navType]);
 
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
 
