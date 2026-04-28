@@ -7,7 +7,7 @@ export default function HowItWorks() {
   const steps = [
     { icon: <MessageSquare size={22} />, num: '01', title: t('Request a Quote', 'اطلب عرض سعر'), desc: t('Contact us with your shipment details via phone or WhatsApp.', 'تواصل معنا بتفاصيل شحنتك عبر الهاتف أو الواتساب.') },
     { icon: <PackageSearch size={22} />, num: '02', title: t('We Collect Your Goods', 'نستلم بضاعتك'), desc: t('Our team picks up your cargo from the supplier and inspects quality.', 'فريقنا يستلم بضاعتك من المورد ويفحص الجودة.') },
-    { icon: <Ship size={22} />, num: '03', title: t('We Ship & You Track', 'نشحن وأنت تتابع'), desc: t('Your shipment moves by air, sea, or land with full real-time tracking.', 'شحنتك تنتقل جواً أو بحراً أو براً مع تتبع مباشر.') },
+    { icon: <Ship size={22} />, num: '03', title: t('We Ship & You Track', 'نشحن وأنت تتابع'), desc: t('Your shipment moves by air or sea with full real-time tracking.', 'شحنتك تنتقل جواً أو بحراً مع تتبع مباشر.') },
     { icon: <MapPin size={22} />, num: '04', title: t('Delivered to Your Door', 'توصيل لبابك'), desc: t('We handle customs and deliver directly to your address.', 'نتولى التخليص ونوصل مباشرة لعنوانك.') },
   ];
 
