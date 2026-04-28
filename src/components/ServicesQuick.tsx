@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
-import { Plane, Ship, Truck, ScanSearch, FileCheck, Boxes } from 'lucide-react';
+import { Plane, Ship, ScanSearch, FileCheck, Boxes } from 'lucide-react';
 import { useT } from '../lib/i18n';
 
 export default function ServicesQuick() {
   const t = useT();
   const items = [
     { icon: <Plane size={22} />, title: t('Air & Sea Freight', 'شحن جوي وبحري'), sub: t('Fast & economical', 'سريع واقتصادي') },
-    { icon: <Truck size={22} />, title: t('Ground Shipping', 'شحن بري'), sub: t('Reliable overland', 'نقل موثوق') },
     { icon: <ScanSearch size={22} />, title: t('Shipment Tracking', 'تتبع الشحنات'), sub: t('Real-time updates', 'لحظة بلحظة') },
     { icon: <FileCheck size={22} />, title: t('Customs Clearance', 'تخليص جمركي'), sub: t('Hassle-free', 'بدون تأخير') },
     { icon: <Boxes size={22} />, title: t('Logistics Solutions', 'حلول لوجستية'), sub: t('Storage & delivery', 'تخزين وتوصيل') },

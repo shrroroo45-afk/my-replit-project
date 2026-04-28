@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
-import { Plane, Ship, Truck, MapPin, FileCheck, Boxes } from 'lucide-react';
+import { Plane, Ship, MapPin, FileCheck, Boxes } from 'lucide-react';
 
 const items = [
   { icon: <Plane size={20} />, label: 'Air Freight', sub: 'Express 7–12 days' },
   { icon: <Ship size={20} />, label: 'Sea Freight', sub: 'Economy 25–35 days' },
-  { icon: <Truck size={20} />, label: 'Land Freight', sub: 'City to city' },
   { icon: <MapPin size={20} />, label: 'Track Shipment', sub: 'Real-time updates' },
   { icon: <FileCheck size={20} />, label: 'Customs', sub: 'Fast clearance' },
   { icon: <Boxes size={20} />, label: 'Logistics', sub: 'Full solutions' },

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Plane, Truck, ScanSearch, FileCheck, Boxes, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Plane, ScanSearch, FileCheck, Boxes, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useLang, useT } from '../lib/i18n';
 
 export default function ServicesDetail() {
@@ -8,7 +8,6 @@ export default function ServicesDetail() {
   const Arrow = lang === 'ar' ? ArrowLeft : ArrowRight;
   const services = [
     { icon: <Plane size={28} />, title: t('Air & Sea Freight', 'شحن جوي وبحري'), desc: t('Fast and economical shipping for parcels and cargo. Choose express air or economy sea based on your timeline and budget.', 'شحن سريع واقتصادي للطرود والبضائع. اختر الشحن الجوي السريع أو البحري الاقتصادي حسب جدولك وميزانيتك.'), features: [t('Express air: 7-12 days', 'جوي سريع: 7-12 يوم'), t('Economy sea: 25-35 days', 'بحري اقتصادي: 25-35 يوم'), t('Full insurance', 'تأمين شامل'), t('Real-time tracking', 'تتبع مباشر')], img: '/uploads/service-air.jpg' },
-    { icon: <Truck size={28} />, title: t('Ground Shipping', 'شحن بري'), desc: t('Reliable overland transport between cities and countries. Safe, tracked, and delivered on schedule.', 'نقل بري موثوق بين المدن والدول. آمن ومتتبع ويتم التسليم في الموعد المحدد.'), features: [t('City-to-city', 'توصيل بين المدن'), t('Cross-border', 'نقل عبر الحدود'), t('Temperature-controlled', 'شحنات مبردة'), t('Scheduled pickups', 'استلام مجدول')], img: '/uploads/service-door.jpg' },
     { icon: <ScanSearch size={28} />, title: t('Shipment Tracking', 'تتبع الشحنات'), desc: t('Monitor your shipment in real-time from pickup to delivery. Get instant updates at every checkpoint.', 'تابع شحنتك لحظة بلحظة من الاستلام حتى التسليم. احصل على تحديثات فورية عند كل نقطة.'), features: [t('Real-time GPS', 'تتبع GPS مباشر'), t('SMS & email alerts', 'إشعارات SMS وإيميل'), t('Online portal', 'بوابة تتبع إلكترونية'), t('Delivery confirmation', 'تأكيد التسليم')], img: '/uploads/service-sea.jpg' },
     { icon: <FileCheck size={28} />, title: t('Customs Clearance', 'تخليص جمركي'), desc: t('We handle all customs documentation and regulatory procedures for fast, smooth clearance.', 'نتولى جميع المستندات والإجراءات الجمركية لضمان تخليص سريع وسلس بدون تأخير.'), features: [t('Documentation', 'إعداد المستندات'), t('Duty calculation', 'حساب الرسوم والضرائب'), t('Compliance', 'الامتثال التنظيمي'), t('Express processing', 'معالجة سريعة')], img: '/uploads/warehouse.jpg' },
     { icon: <Boxes size={28} />, title: t('Logistics Solutions', 'حلول لوجستية متكاملة'), desc: t('Warehousing, distribution, and last-mile delivery tailored to your supply chain needs.', 'خدمات تخزين وتوزيع وتوصيل الميل الأخير مصممة خصيصاً لسلسلة التوريد الخاصة بك.'), features: [t('Warehouse storage', 'تخزين في المستودعات'), t('Inventory management', 'إدارة المخزون'), t('Distribution network', 'شبكة توزيع'), t('Last-mile delivery', 'توصيل الميل الأخير')], img: '/uploads/logistics-worker.jpg' },
